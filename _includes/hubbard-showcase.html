@@ -1,0 +1,141 @@
+<link
+  rel="stylesheet"
+  href="{{ '/assets/css/hubbard-showcase.css' | relative_url }}"
+>
+
+<section
+  id="hubbard-showcase"
+  class="hm-card"
+  aria-labelledby="hm-title"
+>
+  <header class="hm-header">
+    <p class="hm-kicker">A schematic many-body playground</p>
+    <h2 id="hm-title">The Hubbard model: hopping, interactions, and emergence</h2>
+    <p>
+      Explore how the competition between kinetic delocalization and local
+      Coulomb repulsion changes charge motion and magnetic correlations on a
+      square lattice.
+    </p>
+  </header>
+
+  <div class="hm-equation" aria-label="The repulsive Hubbard Hamiltonian">
+    \[
+      H =
+      -t\sum_{\langle i,j\rangle,\sigma}
+      \left(c^{\dagger}_{i\sigma}c_{j\sigma}+\mathrm{h.c.}\right)
+      + U\sum_i n_{i\uparrow}n_{i\downarrow}
+      - \mu\sum_{i,\sigma}n_{i\sigma}.
+    \]
+  </div>
+
+  <div class="hm-definition-row" aria-label="Model parameters">
+    <span><strong>\(t\)</strong> hopping amplitude</span>
+    <span><strong>\(U\)</strong> on-site repulsion</span>
+    <span><strong>\(n\)</strong> average filling</span>
+  </div>
+
+  <div class="hm-controls">
+    <label class="hm-control" for="hubbard-u">
+      <span>
+        Interaction
+        <output id="hubbard-u-value" for="hubbard-u">6.5</output>
+      </span>
+      <input
+        id="hubbard-u"
+        type="range"
+        min="0"
+        max="12"
+        step="0.5"
+        value="6.5"
+      >
+      <small>\(U/t\)</small>
+    </label>
+
+    <label class="hm-control" for="hubbard-filling">
+      <span>
+        Filling
+        <output id="hubbard-filling-value" for="hubbard-filling">0.90</output>
+      </span>
+      <input
+        id="hubbard-filling"
+        type="range"
+        min="0.60"
+        max="1.00"
+        step="0.05"
+        value="0.90"
+      >
+      <small>\(n=N_e/N_s\)</small>
+    </label>
+  </div>
+
+  <div class="hm-readouts" aria-live="polite">
+    <div>
+      <span>Correlation regime</span>
+      <strong id="hubbard-regime-value">intermediate-coupling regime</strong>
+    </div>
+    <div>
+      <span>Carrier density</span>
+      <strong id="hubbard-occupancy-value">hole doping \(\delta=0.10\)</strong>
+    </div>
+    <div>
+      <span>Strong-coupling scale</span>
+      <strong id="hubbard-exchange-value">\(J/t\approx0.62\)</strong>
+    </div>
+  </div>
+
+  <figure class="hm-lattice">
+    <canvas
+      id="hubbard-canvas"
+      width="900"
+      height="380"
+      aria-label="Schematic animation of spin-up and spin-down electrons on a square lattice"
+    ></canvas>
+
+    <figcaption>
+      <span class="hm-legend hm-up">spin up</span>
+      <span class="hm-legend hm-down">spin down</span>
+      <span class="hm-legend hm-doublon">double occupancy</span>
+      <span class="hm-legend hm-virtual">virtual hopping / exchange</span>
+    </figcaption>
+  </figure>
+
+  <div class="hm-flow" aria-hidden="true">
+    <span></span>
+    <b>emergent low-energy behaviour</b>
+  </div>
+
+  <div class="hm-outcomes">
+    <section>
+      <h3>Minimal repulsive square-lattice model</h3>
+      <div class="hm-tags">
+        <span data-tendency="metal">itinerant correlated metal</span>
+        <span data-tendency="af">antiferromagnetic correlations</span>
+        <span data-tendency="mott">Mott / local-moment regime</span>
+        <span data-tendency="pairing">unconventional pairing correlations</span>
+        <span data-tendency="exchange">superexchange \(J\simeq4t^2/U\)</span>
+      </div>
+    </section>
+
+    <section class="hm-extensions">
+      <h3>With lattice, orbital, spin-orbit, or longer-range extensions</h3>
+      <div class="hm-tags">
+        <span>altermagnetism</span>
+        <span>charge and nematic order</span>
+        <span>topological phases</span>
+        <span>fractionalized states</span>
+        <span>additional collective modes</span>
+      </div>
+    </section>
+  </div>
+
+  <p class="hm-note">
+    This is a qualitative visualization, not a computed phase diagram.
+    Actual phases depend on temperature, dimensionality, lattice geometry,
+    filling, and additional microscopic terms.
+  </p>
+</section>
+
+<script
+  src="{{ '/assets/js/hubbard-showcase.js' | relative_url }}"
+  defer
+></script>
