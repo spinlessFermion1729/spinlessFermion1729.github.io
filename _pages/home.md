@@ -16,7 +16,16 @@ profile:
 
       <p>
         <strong>Theoretical Physics I</strong><br>
-        Julius-Maximilians-Universität Würzburg<br>
+
+        <a
+          class="jmu-name-link"
+          href="https://www.uni-wuerzburg.de/en/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Julius-Maximilians-Universität Würzburg
+        </a><br>
+
         M1 Computer Science/Physics, Room 03.015<br>
         Am Hubland, 97074 Würzburg, Germany
       </p>
@@ -54,7 +63,7 @@ latest_posts:
 .compact-office {
   margin-top: 0.6rem;
   font-size: 0.82rem;
-  line-height: 1.3;
+  line-height: 1.32;
 }
 
 .compact-office h5 {
@@ -70,99 +79,112 @@ latest_posts:
   overflow-wrap: anywhere;
 }
 
-/* Animated Indian flag beside the name */
+.jmu-name-link {
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------
+   JMU image card
+   --------------------------------------------------------- */
+
+.jmu-campus-card {
+  float: left;
+  width: 220px;
+  margin: 0.25rem 1.35rem 1rem 0;
+  padding: 0.45rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.55rem;
+  background: var(--global-card-bg-color);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+}
+
+.jmu-campus-image-link {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.35rem;
+}
+
+.jmu-campus-image {
+  display: block;
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+  transition:
+    transform 250ms ease,
+    filter 250ms ease;
+}
+
+.jmu-campus-image-link:hover .jmu-campus-image {
+  transform: scale(1.045);
+  filter: brightness(1.05);
+}
+
+.jmu-campus-caption {
+  padding: 0.55rem 0.2rem 0.15rem;
+  font-size: 0.77rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.jmu-campus-caption strong {
+  display: block;
+  margin-bottom: 0.22rem;
+  font-size: 0.83rem;
+}
+
+.jmu-photo-credit {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--global-text-color-light);
+  font-size: 0.64rem;
+  line-height: 1.25;
+}
+
+.home-content-clear {
+  clear: both;
+}
+
+/* ---------------------------------------------------------
+   Animated flag after the homepage name
+   --------------------------------------------------------- */
+
 .india-flag-link {
-  display: inline-block;
-  margin-left: 0.45rem;
-  vertical-align: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.52rem;
+  vertical-align: 0.04em;
   text-decoration: none !important;
 }
 
-.india-flag {
-  position: relative;
-  display: inline-flex;
-  width: 50px;
-  height: 33.33px;
-  overflow: hidden;
-  vertical-align: middle;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+.india-flag-image {
+  display: block;
+  width: 58px;
+  height: auto;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.32));
   transform-origin: left center;
-  animation: india-flag-body 2s ease-in-out infinite;
+  animation: flag-perspective 4.5s ease-in-out infinite;
 }
 
-.india-flag-strip {
-  flex: 1 1 0;
-  height: 100%;
-  background:
-    linear-gradient(
-      to bottom,
-      #ff9933 0%,
-      #ff9933 33.333%,
-      #ffffff 33.333%,
-      #ffffff 66.666%,
-      #138808 66.666%,
-      #138808 100%
-    );
-  animation: india-flag-ripple 1.5s ease-in-out infinite;
-  animation-delay: calc(var(--strip-index) * -0.07s);
+.india-flag-link:hover .india-flag-image {
+  filter:
+    brightness(1.08)
+    drop-shadow(0 3px 5px rgba(0, 0, 0, 0.38));
 }
 
-.india-flag-chakra {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 10px;
-  height: 10px;
-  border: 1px solid #000080;
-  border-radius: 50%;
-  background:
-    repeating-conic-gradient(
-      from 0deg,
-      #000080 0deg 1deg,
-      transparent 1deg 15deg
-    );
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-
-.india-flag-chakra::after {
-  position: absolute;
-  inset: 40%;
-  border-radius: 50%;
-  background: #000080;
-  content: "";
-}
-
-@keyframes india-flag-body {
+@keyframes flag-perspective {
   0%,
   100% {
-    transform: perspective(180px) rotateY(-8deg) skewY(0deg);
+    transform: perspective(220px) rotateY(-3deg);
   }
 
   50% {
-    transform: perspective(180px) rotateY(8deg) skewY(-1deg);
+    transform: perspective(220px) rotateY(7deg);
   }
 }
 
-@keyframes india-flag-ripple {
-  0%,
-  100% {
-    transform: translateY(0) scaleY(1);
-  }
-
-  25% {
-    transform: translateY(-1.7px) scaleY(1.05);
-  }
-
-  50% {
-    transform: translateY(1.3px) scaleY(0.96);
-  }
-
-  75% {
-    transform: translateY(-0.8px) scaleY(1.02);
-  }
-}
+/* ---------------------------------------------------------
+   Visitor flags
+   --------------------------------------------------------- */
 
 .visitor-flags {
   clear: both;
@@ -182,30 +204,84 @@ latest_posts:
   height: auto;
 }
 
-@media (max-width: 576px) {
-  .india-flag {
-    width: 43px;
-    height: 28.67px;
+@media (max-width: 800px) {
+  .jmu-campus-card {
+    float: none;
+    width: min(100%, 390px);
+    margin: 1rem auto 1.4rem;
   }
 
-  .india-flag-chakra {
-    width: 8px;
-    height: 8px;
+  .jmu-campus-image {
+    height: auto;
+    max-height: 230px;
+  }
+}
+
+@media (max-width: 576px) {
+  .india-flag-link {
+    margin-left: 0.32rem;
+  }
+
+  .india-flag-image {
+    width: 47px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .india-flag,
-  .india-flag-strip {
+  .india-flag-image,
+  .jmu-campus-image {
     animation: none;
+    transition: none;
   }
 }
 </style>
 
+<div class="jmu-campus-card">
+  <a
+    class="jmu-campus-image-link"
+    href="https://en.wikipedia.org/wiki/University_of_W%C3%BCrzburg"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="University of Würzburg on Wikipedia"
+  >
+    <img
+      class="jmu-campus-image"
+      src="/assets/img/jmu-main-building.jpg"
+      alt="Main building of Julius-Maximilians-Universität Würzburg"
+    >
+  </a>
+
+  <div class="jmu-campus-caption">
+    <strong>
+      <a
+        href="https://www.uni-wuerzburg.de/en/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Julius-Maximilians-Universität Würzburg
+      </a>
+    </strong>
+
+    Main building at Sanderring
+
+    <span class="jmu-photo-credit">
+      Photo: Robert Emmerich /
+      <a
+        href="https://commons.wikimedia.org/wiki/File:Wuerzburg_new_university_2005.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Wikimedia Commons
+      </a>,
+      CC BY-SA 3.0
+    </span>
+  </div>
+</div>
+
 I am **Sarbajit Mazumdar**, a Ph.D. student in
 **Theoretical Physics I** at the
-**Julius-Maximilians-Universität Würzburg**, working in the
-Condensed Matter Theory group of
+[**Julius-Maximilians-Universität Würzburg**](https://www.uni-wuerzburg.de/en/),
+working in the Condensed Matter Theory group of
 [Prof. Ronny Thomale](https://www.physik.uni-wuerzburg.de/tp1/team/professoren/prof-dr-ronny-thomale/).
 
 My research focuses on theoretical condensed matter physics, particularly
@@ -215,6 +291,8 @@ My research focuses on theoretical condensed matter physics, particularly
 
 I am interested in understanding how interactions, symmetry, topology,
 magnetism, and low dimensionality give rise to emergent quantum phenomena.
+
+<div class="home-content-clear"></div>
 
 <div class="visitor-flags">
   <h3>Visitors around the world</h3>
@@ -226,111 +304,53 @@ magnetism, and low dimensionality give rise to emergent quantum phenomena.
   >
 </div>
 
-<!-- HOME_NAME_FLAG_START -->
-
-<style>
-.india-flag-link {
-  display: inline-flex;
-  align-items: center;
-  margin-left: 0.55rem;
-  vertical-align: middle;
-  text-decoration: none !important;
-  perspective: 140px;
-}
-
-.india-flag-image {
-  display: block;
-  width: 48px;
-  height: 32px;
-  border-radius: 2px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
-  transform-origin: left center;
-  animation: india-flag-wave 1.7s ease-in-out infinite;
-}
-
-.india-flag-link:hover .india-flag-image {
-  animation-duration: 0.85s;
-}
-
-@keyframes india-flag-wave {
-  0%,
-  100% {
-    transform:
-      perspective(140px)
-      rotateY(0deg)
-      skewY(0deg)
-      scaleX(1);
-  }
-
-  20% {
-    transform:
-      perspective(140px)
-      rotateY(-17deg)
-      skewY(1.2deg)
-      scaleX(0.96);
-  }
-
-  45% {
-    transform:
-      perspective(140px)
-      rotateY(11deg)
-      skewY(-1deg)
-      scaleX(1.02);
-  }
-
-  70% {
-    transform:
-      perspective(140px)
-      rotateY(-9deg)
-      skewY(0.7deg)
-      scaleX(0.98);
-  }
-}
-
-@media (max-width: 576px) {
-  .india-flag-link {
-    margin-left: 0.35rem;
-  }
-
-  .india-flag-image {
-    width: 40px;
-    height: auto;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .india-flag-image {
-    animation: none;
-  }
-}
-</style>
-
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const title = document.querySelector(".post-header .post-title");
+(function () {
+  function installIndianFlag() {
+    const title =
+      document.querySelector(".post-header .post-title") ||
+      document.querySelector("h1.post-title") ||
+      document.querySelector(".post-title");
 
-  if (!title || title.querySelector(".india-flag-link")) {
-    return;
+    if (!title) {
+      return;
+    }
+
+    const oldFlag = title.querySelector(".india-flag-link");
+
+    if (oldFlag) {
+      oldFlag.remove();
+    }
+
+    const flagLink = document.createElement("a");
+
+    flagLink.className = "india-flag-link";
+    flagLink.href = "https://en.wikipedia.org/wiki/India";
+    flagLink.target = "_blank";
+    flagLink.rel = "noopener noreferrer";
+    flagLink.title = "India";
+    flagLink.setAttribute(
+      "aria-label",
+      "Open the Wikipedia page for India"
+    );
+
+    const flagImage = document.createElement("img");
+
+    flagImage.className = "india-flag-image";
+    flagImage.src = "/assets/img/india-flag.svg";
+    flagImage.alt = "Animated flag of India";
+
+    flagLink.appendChild(flagImage);
+    title.appendChild(flagLink);
   }
 
-  const flagLink = document.createElement("a");
-
-  flagLink.className = "india-flag-link";
-  flagLink.href = "https://en.wikipedia.org/wiki/India";
-  flagLink.target = "_blank";
-  flagLink.rel = "noopener noreferrer";
-  flagLink.title = "India";
-  flagLink.setAttribute("aria-label", "Open the Wikipedia page for India");
-
-  const flagImage = document.createElement("img");
-
-  flagImage.className = "india-flag-image";
-  flagImage.src = "/assets/img/india-flag.svg";
-  flagImage.alt = "Flag of India";
-
-  flagLink.appendChild(flagImage);
-  title.appendChild(flagLink);
-});
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      installIndianFlag
+    );
+  } else {
+    installIndianFlag();
+  }
+})();
 </script>
-
-<!-- HOME_NAME_FLAG_END -->
