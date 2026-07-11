@@ -52,14 +52,14 @@ latest_posts:
 
 <style>
 .compact-office {
+  margin-top: 0.6rem;
   font-size: 0.82rem;
   line-height: 1.3;
-  margin-top: 0.6rem;
 }
 
 .compact-office h5 {
-  font-size: 1rem;
   margin-bottom: 0.4rem;
+  font-size: 1rem;
 }
 
 .compact-office p {
@@ -68,6 +68,100 @@ latest_posts:
 
 .office-contact {
   overflow-wrap: anywhere;
+}
+
+/* Animated Indian flag beside the name */
+.india-flag-link {
+  display: inline-block;
+  margin-left: 0.45rem;
+  vertical-align: 0.06em;
+  text-decoration: none !important;
+}
+
+.india-flag {
+  position: relative;
+  display: inline-flex;
+  width: 50px;
+  height: 33.33px;
+  overflow: hidden;
+  vertical-align: middle;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  transform-origin: left center;
+  animation: india-flag-body 2s ease-in-out infinite;
+}
+
+.india-flag-strip {
+  flex: 1 1 0;
+  height: 100%;
+  background:
+    linear-gradient(
+      to bottom,
+      #ff9933 0%,
+      #ff9933 33.333%,
+      #ffffff 33.333%,
+      #ffffff 66.666%,
+      #138808 66.666%,
+      #138808 100%
+    );
+  animation: india-flag-ripple 1.5s ease-in-out infinite;
+  animation-delay: calc(var(--strip-index) * -0.07s);
+}
+
+.india-flag-chakra {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #000080;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      #000080 0deg 1deg,
+      transparent 1deg 15deg
+    );
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.india-flag-chakra::after {
+  position: absolute;
+  inset: 40%;
+  border-radius: 50%;
+  background: #000080;
+  content: "";
+}
+
+@keyframes india-flag-body {
+  0%,
+  100% {
+    transform: perspective(180px) rotateY(-8deg) skewY(0deg);
+  }
+
+  50% {
+    transform: perspective(180px) rotateY(8deg) skewY(-1deg);
+  }
+}
+
+@keyframes india-flag-ripple {
+  0%,
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+
+  25% {
+    transform: translateY(-1.7px) scaleY(1.05);
+  }
+
+  50% {
+    transform: translateY(1.3px) scaleY(0.96);
+  }
+
+  75% {
+    transform: translateY(-0.8px) scaleY(1.02);
+  }
 }
 
 .visitor-flags {
@@ -86,6 +180,25 @@ latest_posts:
 .visitor-flags img {
   max-width: 100%;
   height: auto;
+}
+
+@media (max-width: 576px) {
+  .india-flag {
+    width: 43px;
+    height: 28.67px;
+  }
+
+  .india-flag-chakra {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .india-flag,
+  .india-flag-strip {
+    animation: none;
+  }
 }
 </style>
 
