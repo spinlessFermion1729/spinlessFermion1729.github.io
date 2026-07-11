@@ -369,15 +369,14 @@ experimentally observable features in quantum materials.
   font-size: clamp(1.15rem, 2.5vw, 1.45rem);
   font-weight: 500;
   line-height: 1.35;
-  letter-spacing: 0.01em;
 }
 
 .pronunciation-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.15rem;
+  height: 2.15rem;
   padding: 0;
   color: var(--global-theme-color);
   cursor: pointer;
@@ -386,14 +385,14 @@ experimentally observable features in quantum materials.
   background: var(--global-card-bg-color);
   transition:
     transform 180ms ease,
-    background-color 180ms ease,
-    box-shadow 180ms ease;
+    box-shadow 180ms ease,
+    background-color 180ms ease;
 }
 
 .pronunciation-button:hover {
   transform: scale(1.1);
   background: var(--global-bg-color);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 3px 11px rgba(0, 0, 0, 0.18);
 }
 
 .pronunciation-button:focus-visible {
@@ -402,8 +401,8 @@ experimentally observable features in quantum materials.
 }
 
 .pronunciation-button svg {
-  width: 1rem;
-  height: 1rem;
+  width: 1.05rem;
+  height: 1.05rem;
   fill: currentColor;
 }
 
@@ -414,12 +413,17 @@ experimentally observable features in quantum materials.
 @keyframes pronunciation-pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0
-      color-mix(in srgb, var(--global-theme-color) 35%, transparent);
+    box-shadow:
+      0 0 0 0
+      color-mix(
+        in srgb,
+        var(--global-theme-color) 42%,
+        transparent
+      );
   }
 
   50% {
-    box-shadow: 0 0 0 7px transparent;
+    box-shadow: 0 0 0 8px transparent;
   }
 }
 
@@ -434,7 +438,7 @@ experimentally observable features in quantum materials.
 
 <script>
 (function () {
-  function addBengaliName() {
+  function addRecordedPronunciation() {
     const title =
       document.querySelector(".post-header .post-title") ||
       document.querySelector("h1.post-title") ||
@@ -455,11 +459,12 @@ experimentally observable features in quantum materials.
     const button = document.createElement("button");
     button.className = "pronunciation-button";
     button.type = "button";
-    button.title = "Listen to the pronunciation";
+    button.title = "Listen to the pronunciation of my name";
     button.setAttribute(
       "aria-label",
       "Listen to the pronunciation of Sarbajit Mazumdar"
     );
+    button.setAttribute("aria-pressed", "false");
 
     button.innerHTML = `
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -467,48 +472,51 @@ experimentally observable features in quantum materials.
       </svg>
     `;
 
-    button.addEventListener("click", function () {
-      if (!("speechSynthesis" in window)) {
-        window.alert(
-          "Speech playback is not supported by this browser."
-        );
-        return;
-      }
+    const audio = new Audio(
+      "{{ '/assets/audio/name-pronunciation.mp3' | relative_url }}"
+    );
 
-      window.speechSynthesis.cancel();
+    audio.preload = "auto";
 
-      const utterance = new SpeechSynthesisUtterance(
-        "সর্বজিৎ মজুমদার"
-      );
+    function setStoppedState() {
+      button.classList.remove("is-speaking");
+      button.setAttribute("aria-pressed", "false");
+    }
 
-      utterance.lang = "bn-IN";
-      utterance.rate = 0.78;
-      utterance.pitch = 1;
-      utterance.volume = 1;
+    button.addEventListener("click", async function () {
+      try {
+        if (!audio.paused) {
+          audio.pause();
+          audio.currentTime = 0;
+          setStoppedState();
+          return;
+        }
 
-      const voices = window.speechSynthesis.getVoices();
+        audio.currentTime = 0;
 
-      const bengaliVoice = voices.find(function (voice) {
-        return voice.lang.toLowerCase().startsWith("bn");
-      });
-
-      if (bengaliVoice) {
-        utterance.voice = bengaliVoice;
-      }
-
-      utterance.onstart = function () {
         button.classList.add("is-speaking");
-      };
+        button.setAttribute("aria-pressed", "true");
 
-      utterance.onend = function () {
-        button.classList.remove("is-speaking");
-      };
+        await audio.play();
+      } catch (error) {
+        setStoppedState();
+        console.error(
+          "Could not play the recorded pronunciation:",
+          error
+        );
+      }
+    });
 
-      utterance.onerror = function () {
-        button.classList.remove("is-speaking");
-      };
+    audio.addEventListener("ended", function () {
+      audio.currentTime = 0;
+      setStoppedState();
+    });
 
-      window.speechSynthesis.speak(utterance);
+    audio.addEventListener("error", function () {
+      setStoppedState();
+      console.error(
+        "The pronunciation audio file could not be loaded."
+      );
     });
 
     row.appendChild(name);
@@ -518,11 +526,15 @@ experimentally observable features in quantum materials.
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", addBengaliName);
+    document.addEventListener(
+      "DOMContentLoaded",
+      addRecordedPronunciation
+    );
   } else {
-    addBengaliName();
+    addRecordedPronunciation();
   }
 })();
 </script>
 
 <!-- BENGALI_NAME_END -->
+
