@@ -6,14 +6,14 @@
     initTheme();
   </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item active"> <a class="nav-link" href="/">Home <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/about/">About </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">Research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/about-me/">About Me </a> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title"> Sarbajit Mazumdar </h1> <p class="desc">Ph.D. Student in Theoretical Physics</p> </header> <article> <div class="profile float-right"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/prof_pic-480.webp 480w,/assets/img/prof_pic-800.webp 800w,/assets/img/prof_pic-1400.webp 1400w," type="image/webp" sizes="(min-width: 930px) 270.0px, (min-width: 576px) 30vw, 95vw"> <img src="/assets/img/prof_pic.jpg?v=effad8e0f5ea2b0a197d4959ef7d96d6" class="img-fluid z-depth-1 rounded-circle" width="100%" height="auto" alt="prof_pic.jpg" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </source></picture> </figure> <div class="more-info"> <div class="compact-office"> <h5>Find me at</h5> <p> <strong>Theoretical Physics I</strong><br> Julius-Maximilians-Universität Würzburg<br> M1 Computer Science/Physics, Room 03.015<br> Am Hubland, 97074 Würzburg, Germany </p> <p class="office-contact"> <a href="tel:+499313184377"> +49 931 31-84377 </a><br> <a href="mailto:sarbajit.mazumdar@uni-wuerzburg.de"> sarbajit.mazumdar@uni-wuerzburg.de </a><br> <a href="https://www.physik.uni-wuerzburg.de/tp1/team/phd-studenten/msc-sarbajit-mazumdar/" target="_blank" rel="noopener noreferrer"> Institutional webpage </a> </p> </div> </div> </div> <div class="clearfix"> <style>
 .compact-office {
+  margin-top: 0.6rem;
   font-size: 0.82rem;
   line-height: 1.3;
-  margin-top: 0.6rem;
 }
 
 .compact-office h5 {
-  font-size: 1rem;
   margin-bottom: 0.4rem;
+  font-size: 1rem;
 }
 
 .compact-office p {
@@ -22,6 +22,100 @@
 
 .office-contact {
   overflow-wrap: anywhere;
+}
+
+/* Animated Indian flag beside the name */
+.india-flag-link {
+  display: inline-block;
+  margin-left: 0.45rem;
+  vertical-align: 0.06em;
+  text-decoration: none !important;
+}
+
+.india-flag {
+  position: relative;
+  display: inline-flex;
+  width: 50px;
+  height: 33.33px;
+  overflow: hidden;
+  vertical-align: middle;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  transform-origin: left center;
+  animation: india-flag-body 2s ease-in-out infinite;
+}
+
+.india-flag-strip {
+  flex: 1 1 0;
+  height: 100%;
+  background:
+    linear-gradient(
+      to bottom,
+      #ff9933 0%,
+      #ff9933 33.333%,
+      #ffffff 33.333%,
+      #ffffff 66.666%,
+      #138808 66.666%,
+      #138808 100%
+    );
+  animation: india-flag-ripple 1.5s ease-in-out infinite;
+  animation-delay: calc(var(--strip-index) * -0.07s);
+}
+
+.india-flag-chakra {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #000080;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      #000080 0deg 1deg,
+      transparent 1deg 15deg
+    );
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.india-flag-chakra::after {
+  position: absolute;
+  inset: 40%;
+  border-radius: 50%;
+  background: #000080;
+  content: "";
+}
+
+@keyframes india-flag-body {
+  0%,
+  100% {
+    transform: perspective(180px) rotateY(-8deg) skewY(0deg);
+  }
+
+  50% {
+    transform: perspective(180px) rotateY(8deg) skewY(-1deg);
+  }
+}
+
+@keyframes india-flag-ripple {
+  0%,
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+
+  25% {
+    transform: translateY(-1.7px) scaleY(1.05);
+  }
+
+  50% {
+    transform: translateY(1.3px) scaleY(0.96);
+  }
+
+  75% {
+    transform: translateY(-0.8px) scaleY(1.02);
+  }
 }
 
 .visitor-flags {
@@ -40,6 +134,25 @@
 .visitor-flags img {
   max-width: 100%;
   height: auto;
+}
+
+@media (max-width: 576px) {
+  .india-flag {
+    width: 43px;
+    height: 28.67px;
+  }
+
+  .india-flag-chakra {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .india-flag,
+  .india-flag-strip {
+    animation: none;
+  }
 }
 </style> <p>I am <strong>Sarbajit Mazumdar</strong>, a Ph.D. student in <strong>Theoretical Physics I</strong> at the <strong>Julius-Maximilians-Universität Würzburg</strong>, working in the Condensed Matter Theory group of <a href="https://www.physik.uni-wuerzburg.de/tp1/team/professoren/prof-dr-ronny-thomale/" rel="external nofollow noopener" target="_blank">Prof. Ronny Thomale</a>.</p> <p>My research focuses on theoretical condensed matter physics, particularly <strong>strongly correlated quantum systems</strong>, <strong>unconventional superconductivity</strong>, <strong>altermagnetism</strong>, <strong>topological phases of matter</strong>, and <strong>quantum transport</strong>.</p> <p>I am interested in understanding how interactions, symmetry, topology, magnetism, and low dimensionality give rise to emergent quantum phenomena.</p> <div class="visitor-flags"> <h3>Visitors around the world</h3> <img src="https://github-visitor-counter-tau.vercel.app/api?username=spinlessFermion1729&amp;theme=dark&amp;columns=4&amp;maxflags=12" alt="Country flags showing visitors to this website" loading="lazy"> </div> </div> <div class="social"> <div class="contact-icons"> <a href="https://scholar.google.com/citations?user=1YhOrqwAAAAJ" title="Scholar userid" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i></a> <a href="https://www.linkedin.com/in/sarbajit-mazumdar-7a3b9b213" title="Linkedin username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> <a href="https://twitter.com/This_isSarbajit" title="X username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter"></i></a> <a href="mailto:sarbajit.mazumdar@uni-wuerzburg.de" title="Email"><i class="fa-solid fa-envelope"></i></a> </div> <div class="contact-note">To get in touch with me, drop an email. </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Sarbajit Mazumdar. Academic website of Sarbajit Mazumdar. </div> </footer> <script>
   window.alFolio = {
