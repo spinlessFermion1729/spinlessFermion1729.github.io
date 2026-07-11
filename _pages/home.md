@@ -681,3 +681,182 @@ experimentally observable features in quantum materials.
   }
 })();
 </script>
+
+<!-- BENGALI_NAME_START -->
+
+<style>
+.bengali-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: -0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.bengali-name {
+  color: var(--global-text-color-light);
+  font-family:
+    "Noto Serif Bengali",
+    "Noto Sans Bengali",
+    "Nirmala UI",
+    serif;
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+.pronunciation-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  color: var(--global-theme-color);
+  cursor: pointer;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 50%;
+  background: var(--global-card-bg-color);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.pronunciation-button:hover {
+  transform: scale(1.1);
+  background: var(--global-bg-color);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+}
+
+.pronunciation-button:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 3px;
+}
+
+.pronunciation-button svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+.pronunciation-button.is-speaking {
+  animation: pronunciation-pulse 1s ease-in-out infinite;
+}
+
+@keyframes pronunciation-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0
+      color-mix(in srgb, var(--global-theme-color) 35%, transparent);
+  }
+
+  50% {
+    box-shadow: 0 0 0 7px transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pronunciation-button,
+  .pronunciation-button.is-speaking {
+    animation: none;
+    transition: none;
+  }
+}
+</style>
+
+<script>
+(function () {
+  function addBengaliName() {
+    const title =
+      document.querySelector(".post-header .post-title") ||
+      document.querySelector("h1.post-title") ||
+      document.querySelector(".post-title");
+
+    if (!title || document.querySelector(".bengali-name-row")) {
+      return;
+    }
+
+    const row = document.createElement("div");
+    row.className = "bengali-name-row";
+
+    const name = document.createElement("span");
+    name.className = "bengali-name";
+    name.lang = "bn";
+    name.textContent = "সর্বজিৎ মজুমদার";
+
+    const button = document.createElement("button");
+    button.className = "pronunciation-button";
+    button.type = "button";
+    button.title = "Listen to the pronunciation";
+    button.setAttribute(
+      "aria-label",
+      "Listen to the pronunciation of Sarbajit Mazumdar"
+    );
+
+    button.innerHTML = `
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3Zm5-3a1 1 0 1 0-2 0 3 3 0 0 1-6 0 1 1 0 1 0-2 0 5 5 0 0 0 4 4.9V19H8.5a1 1 0 1 0 0 2h7a1 1 0 1 0 0-2H13v-3.1A5 5 0 0 0 17 11Z"/>
+      </svg>
+    `;
+
+    button.addEventListener("click", function () {
+      if (!("speechSynthesis" in window)) {
+        window.alert(
+          "Speech playback is not supported by this browser."
+        );
+        return;
+      }
+
+      window.speechSynthesis.cancel();
+
+      const utterance = new SpeechSynthesisUtterance(
+        "সর্বজিৎ মজুমদার"
+      );
+
+      utterance.lang = "bn-IN";
+      utterance.rate = 0.78;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+
+      const voices = window.speechSynthesis.getVoices();
+
+      const bengaliVoice = voices.find(function (voice) {
+        return voice.lang.toLowerCase().startsWith("bn");
+      });
+
+      if (bengaliVoice) {
+        utterance.voice = bengaliVoice;
+      }
+
+      utterance.onstart = function () {
+        button.classList.add("is-speaking");
+      };
+
+      utterance.onend = function () {
+        button.classList.remove("is-speaking");
+      };
+
+      utterance.onerror = function () {
+        button.classList.remove("is-speaking");
+      };
+
+      window.speechSynthesis.speak(utterance);
+    });
+
+    row.appendChild(name);
+    row.appendChild(button);
+
+    title.insertAdjacentElement("afterend", row);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", addBengaliName);
+  } else {
+    addBengaliName();
+  }
+})();
+</script>
+
+<!-- BENGALI_NAME_END -->
