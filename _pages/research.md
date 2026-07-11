@@ -4,38 +4,28 @@ title: Research
 permalink: /research/
 nav: true
 nav_order: 3
-description: Research interests and current projects.
+description: Research interests and current work.
 ---
 
 ## Research interests
 
-### Strongly correlated quantum systems
+My research focuses on **strongly correlated quantum systems**, where
+interactions between electrons produce collective behaviour that cannot be
+understood through a simple single-particle picture. I am particularly
+interested in interaction-driven phases of quantum matter, the emergence of
+unconventional superconductivity, and the relationship between electronic
+correlations and superconducting pairing symmetries.
 
-Understanding interaction-driven phases and emergent behaviour in quantum
-materials.
+A second major direction of my work concerns **altermagnetic systems** and
+topological quantum phases. I study how lattice symmetry, sublattice
+structure, electronic interactions, and magnetic order generate unusual
+momentum-dependent spin structures and collective excitations. I am also
+interested in topology in Hermitian, non-Hermitian, superconducting, and
+periodically driven systems.
 
-### Unconventional superconductivity
-
-Studying superconducting instabilities, pairing symmetries, and the influence
-of electronic correlations.
-
-### Altermagnetism
-
-Investigating momentum-dependent spin splitting, magnetic multipoles, and
-Fermi-surface polarization in altermagnetic systems.
-
-### Topological phases
-
-Exploring topology in Hermitian, non-Hermitian, superconducting, and driven
-quantum systems.
-
-### Quantum transport
-
-Studying electronic and superconducting transport using scattering theory,
-tight-binding models, and numerical simulations.
-
-## Current research
-
-My current work includes slave-boson descriptions of correlated systems,
-altermagnetic Fermi surfaces, unconventional superconductivity, and transport
-in quantum materials.
+My work on **quantum transport** investigates electronic and superconducting
+transport through low-dimensional systems using scattering theory,
+tight-binding models, and numerical simulations. My current research combines
+slave-boson descriptions of correlated fermions with studies of unconventional
+superconductivity, collective excitations in correlated altermagnetic systems,
+and transport phenomena in quantum materials.
