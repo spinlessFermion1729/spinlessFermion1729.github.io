@@ -154,7 +154,108 @@
     animation: none;
   }
 }
-</style> <p>I am <strong>Sarbajit Mazumdar</strong>, a Ph.D. student in <strong>Theoretical Physics I</strong> at the <strong>Julius-Maximilians-Universität Würzburg</strong>, working in the Condensed Matter Theory group of <a href="https://www.physik.uni-wuerzburg.de/tp1/team/professoren/prof-dr-ronny-thomale/" rel="external nofollow noopener" target="_blank">Prof. Ronny Thomale</a>.</p> <p>My research focuses on theoretical condensed matter physics, particularly <strong>strongly correlated quantum systems</strong>, <strong>unconventional superconductivity</strong>, <strong>altermagnetism</strong>, <strong>topological phases of matter</strong>, and <strong>quantum transport</strong>.</p> <p>I am interested in understanding how interactions, symmetry, topology, magnetism, and low dimensionality give rise to emergent quantum phenomena.</p> <div class="visitor-flags"> <h3>Visitors around the world</h3> <img src="https://github-visitor-counter-tau.vercel.app/api?username=spinlessFermion1729&amp;theme=dark&amp;columns=4&amp;maxflags=12" alt="Country flags showing visitors to this website" loading="lazy"> </div> </div> <div class="social"> <div class="contact-icons"> <a href="https://scholar.google.com/citations?user=1YhOrqwAAAAJ" title="Scholar userid" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i></a> <a href="https://www.linkedin.com/in/sarbajit-mazumdar-7a3b9b213" title="Linkedin username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> <a href="https://twitter.com/This_isSarbajit" title="X username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter"></i></a> <a href="mailto:sarbajit.mazumdar@uni-wuerzburg.de" title="Email"><i class="fa-solid fa-envelope"></i></a> </div> <div class="contact-note">To get in touch with me, drop an email. </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Sarbajit Mazumdar. Academic website of Sarbajit Mazumdar. </div> </footer> <script>
+</style> <p>I am <strong>Sarbajit Mazumdar</strong>, a Ph.D. student in <strong>Theoretical Physics I</strong> at the <strong>Julius-Maximilians-Universität Würzburg</strong>, working in the Condensed Matter Theory group of <a href="https://www.physik.uni-wuerzburg.de/tp1/team/professoren/prof-dr-ronny-thomale/" rel="external nofollow noopener" target="_blank">Prof. Ronny Thomale</a>.</p> <p>My research focuses on theoretical condensed matter physics, particularly <strong>strongly correlated quantum systems</strong>, <strong>unconventional superconductivity</strong>, <strong>altermagnetism</strong>, <strong>topological phases of matter</strong>, and <strong>quantum transport</strong>.</p> <p>I am interested in understanding how interactions, symmetry, topology, magnetism, and low dimensionality give rise to emergent quantum phenomena.</p> <div class="visitor-flags"> <h3>Visitors around the world</h3> <img src="https://github-visitor-counter-tau.vercel.app/api?username=spinlessFermion1729&amp;theme=dark&amp;columns=4&amp;maxflags=12" alt="Country flags showing visitors to this website" loading="lazy"> </div> <style>
+.india-flag-link {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.55rem;
+  vertical-align: middle;
+  text-decoration: none !important;
+  perspective: 140px;
+}
+
+.india-flag-image {
+  display: block;
+  width: 48px;
+  height: 32px;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+  transform-origin: left center;
+  animation: india-flag-wave 1.7s ease-in-out infinite;
+}
+
+.india-flag-link:hover .india-flag-image {
+  animation-duration: 0.85s;
+}
+
+@keyframes india-flag-wave {
+  0%,
+  100% {
+    transform:
+      perspective(140px)
+      rotateY(0deg)
+      skewY(0deg)
+      scaleX(1);
+  }
+
+  20% {
+    transform:
+      perspective(140px)
+      rotateY(-17deg)
+      skewY(1.2deg)
+      scaleX(0.96);
+  }
+
+  45% {
+    transform:
+      perspective(140px)
+      rotateY(11deg)
+      skewY(-1deg)
+      scaleX(1.02);
+  }
+
+  70% {
+    transform:
+      perspective(140px)
+      rotateY(-9deg)
+      skewY(0.7deg)
+      scaleX(0.98);
+  }
+}
+
+@media (max-width: 576px) {
+  .india-flag-link {
+    margin-left: 0.35rem;
+  }
+
+  .india-flag-image {
+    width: 40px;
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .india-flag-image {
+    animation: none;
+  }
+}
+</style> <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const title = document.querySelector(".post-header .post-title");
+
+  if (!title || title.querySelector(".india-flag-link")) {
+    return;
+  }
+
+  const flagLink = document.createElement("a");
+
+  flagLink.className = "india-flag-link";
+  flagLink.href = "https://en.wikipedia.org/wiki/India";
+  flagLink.target = "_blank";
+  flagLink.rel = "noopener noreferrer";
+  flagLink.title = "India";
+  flagLink.setAttribute("aria-label", "Open the Wikipedia page for India");
+
+  const flagImage = document.createElement("img");
+
+  flagImage.className = "india-flag-image";
+  flagImage.src = "/assets/img/india-flag.svg";
+  flagImage.alt = "Flag of India";
+
+  flagLink.appendChild(flagImage);
+  title.appendChild(flagLink);
+});
+</script> </div> <div class="social"> <div class="contact-icons"> <a href="https://scholar.google.com/citations?user=1YhOrqwAAAAJ" title="Scholar userid" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i></a> <a href="https://www.linkedin.com/in/sarbajit-mazumdar-7a3b9b213" title="Linkedin username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> <a href="https://twitter.com/This_isSarbajit" title="X username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter"></i></a> <a href="mailto:sarbajit.mazumdar@uni-wuerzburg.de" title="Email"><i class="fa-solid fa-envelope"></i></a> </div> <div class="contact-note">To get in touch with me, drop an email. </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Sarbajit Mazumdar. Academic website of Sarbajit Mazumdar. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
