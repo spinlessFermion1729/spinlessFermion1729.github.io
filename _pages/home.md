@@ -225,3 +225,112 @@ magnetism, and low dimensionality give rise to emergent quantum phenomena.
     loading="lazy"
   >
 </div>
+
+<!-- HOME_NAME_FLAG_START -->
+
+<style>
+.india-flag-link {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.55rem;
+  vertical-align: middle;
+  text-decoration: none !important;
+  perspective: 140px;
+}
+
+.india-flag-image {
+  display: block;
+  width: 48px;
+  height: 32px;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+  transform-origin: left center;
+  animation: india-flag-wave 1.7s ease-in-out infinite;
+}
+
+.india-flag-link:hover .india-flag-image {
+  animation-duration: 0.85s;
+}
+
+@keyframes india-flag-wave {
+  0%,
+  100% {
+    transform:
+      perspective(140px)
+      rotateY(0deg)
+      skewY(0deg)
+      scaleX(1);
+  }
+
+  20% {
+    transform:
+      perspective(140px)
+      rotateY(-17deg)
+      skewY(1.2deg)
+      scaleX(0.96);
+  }
+
+  45% {
+    transform:
+      perspective(140px)
+      rotateY(11deg)
+      skewY(-1deg)
+      scaleX(1.02);
+  }
+
+  70% {
+    transform:
+      perspective(140px)
+      rotateY(-9deg)
+      skewY(0.7deg)
+      scaleX(0.98);
+  }
+}
+
+@media (max-width: 576px) {
+  .india-flag-link {
+    margin-left: 0.35rem;
+  }
+
+  .india-flag-image {
+    width: 40px;
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .india-flag-image {
+    animation: none;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const title = document.querySelector(".post-header .post-title");
+
+  if (!title || title.querySelector(".india-flag-link")) {
+    return;
+  }
+
+  const flagLink = document.createElement("a");
+
+  flagLink.className = "india-flag-link";
+  flagLink.href = "https://en.wikipedia.org/wiki/India";
+  flagLink.target = "_blank";
+  flagLink.rel = "noopener noreferrer";
+  flagLink.title = "India";
+  flagLink.setAttribute("aria-label", "Open the Wikipedia page for India");
+
+  const flagImage = document.createElement("img");
+
+  flagImage.className = "india-flag-image";
+  flagImage.src = "/assets/img/india-flag.svg";
+  flagImage.alt = "Flag of India";
+
+  flagLink.appendChild(flagImage);
+  title.appendChild(flagLink);
+});
+</script>
+
+<!-- HOME_NAME_FLAG_END -->
