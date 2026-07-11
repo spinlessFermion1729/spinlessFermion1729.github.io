@@ -15,8 +15,7 @@ Condensed Matter Theory group of
 [Prof. Ronny Thomale](https://www.physik.uni-wuerzburg.de/tp1/team/professoren/prof-dr-ronny-thomale/).
 
 My current research is centred on strongly correlated quantum systems,
-unconventional superconductivity, altermagnetism, and quantum many-body
-theory.
+unconventional superconductivity, altermagnetism, and quantum many-body theory.
 
 ## Academic background
 
@@ -24,9 +23,9 @@ I completed my **Integrated Master's degree in Physics** at the
 [National Institute of Science Education and Research (NISER), Bhubaneswar](https://www.niser.ac.in/),
 with a **CGPA of 9.37/10**.
 
-My academic training is in theoretical and computational condensed matter
-physics. I am particularly interested in systems where strong correlations,
-symmetry, topology, and magnetism generate emergent quantum phenomena.
+My academic training is in **theoretical condensed matter physics**. I am
+particularly interested in systems where strong correlations, symmetry,
+topology, and magnetism generate emergent quantum phenomena.
 
 ## Methods
 
