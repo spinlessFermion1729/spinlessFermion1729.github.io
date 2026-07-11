@@ -32,6 +32,5 @@ symmetry, topology, and magnetism generate emergent quantum phenomena.
 
 My research uses analytical and numerical techniques from quantum many-body
 theory, slave-boson methods, tight-binding models, topological band theory,
-and quantum transport.
-
-My computational work primarily uses **Python, C++, Mathematica, and Kwant**.
+and quantum transport. My computational work primarily uses **Python, C++,
+and Mathematica**.

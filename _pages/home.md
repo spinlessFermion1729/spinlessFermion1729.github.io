@@ -83,10 +83,6 @@ latest_posts:
   font-weight: 600;
 }
 
-/* ---------------------------------------------------------
-   JMU image card
-   --------------------------------------------------------- */
-
 .jmu-campus-card {
   float: left;
   width: 220px;
@@ -144,10 +140,6 @@ latest_posts:
   clear: both;
 }
 
-/* ---------------------------------------------------------
-   Animated flag after the homepage name
-   --------------------------------------------------------- */
-
 .india-flag-link {
   display: inline-flex;
   align-items: center;
@@ -181,10 +173,6 @@ latest_posts:
     transform: perspective(220px) rotateY(7deg);
   }
 }
-
-/* ---------------------------------------------------------
-   Visitor flags
-   --------------------------------------------------------- */
 
 .visitor-flags {
   clear: both;
@@ -291,6 +279,11 @@ My research focuses on theoretical condensed matter physics, particularly
 
 I am interested in understanding how interactions, symmetry, topology,
 magnetism, and low dimensionality give rise to emergent quantum phenomena.
+In particular, I study how microscopic electronic processes organize into
+collective phases with unconventional magnetic, superconducting, and
+topological properties. My broader goal is to develop theoretical
+descriptions that connect fundamental many-body mechanisms with
+experimentally observable features in quantum materials.
 
 <div class="home-content-clear"></div>
 
