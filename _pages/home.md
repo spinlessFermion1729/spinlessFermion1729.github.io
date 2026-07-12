@@ -330,7 +330,7 @@ experimentally observable features in quantum materials.
     const flagImage = document.createElement("img");
 
     flagImage.className = "india-flag-image";
-    flagImage.src = "/assets/img/india-flag.svg";
+    flagImage.src = "/assets/img/india-flag.gif";
     flagImage.alt = "Animated flag of India";
 
     flagLink.appendChild(flagImage);
