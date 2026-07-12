@@ -1,0 +1,104 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  role="img"
+  aria-label="Correlated electron lattice"
+>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#172033"/>
+      <stop offset="1" stop-color="#080d18"/>
+    </linearGradient>
+
+    <radialGradient id="centre-glow">
+      <stop offset="0" stop-color="#a855f7" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect
+    x="2"
+    y="2"
+    width="60"
+    height="60"
+    rx="14"
+    fill="url(#background)"
+  />
+
+  <g
+    fill="none"
+    stroke="#8fa3bf"
+    stroke-width="2"
+    stroke-linecap="round"
+    opacity="0.72"
+  >
+    <path d="M16 16H48"/>
+    <path d="M16 32H48"/>
+    <path d="M16 48H48"/>
+
+    <path d="M16 16V48"/>
+    <path d="M32 16V48"/>
+    <path d="M48 16V48"/>
+  </g>
+
+  <g fill="#dce7f5">
+    <circle cx="16" cy="16" r="3"/>
+    <circle cx="32" cy="16" r="3"/>
+    <circle cx="48" cy="16" r="3"/>
+
+    <circle cx="16" cy="32" r="3"/>
+    <circle cx="48" cy="32" r="3"/>
+
+    <circle cx="16" cy="48" r="3"/>
+    <circle cx="32" cy="48" r="3"/>
+    <circle cx="48" cy="48" r="3"/>
+  </g>
+
+  <circle
+    cx="32"
+    cy="32"
+    r="15"
+    fill="url(#centre-glow)"
+  />
+
+  <circle
+    cx="32"
+    cy="32"
+    r="10"
+    fill="#111827"
+    stroke="#dce7f5"
+    stroke-width="1.5"
+  />
+
+  <circle
+    cx="28.5"
+    cy="32"
+    r="5"
+    fill="#e24b68"
+  />
+
+  <circle
+    cx="35.5"
+    cy="32"
+    r="5"
+    fill="#3b82f6"
+  />
+
+  <path
+    d="M28.5 35V28.8M28.5 28.8L26.4 31M28.5 28.8L30.6 31"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="1.4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <path
+    d="M35.5 29V35.2M35.5 35.2L33.4 33M35.5 35.2L37.6 33"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="1.4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

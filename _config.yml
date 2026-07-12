@@ -14,7 +14,7 @@ footer_text: >
   Academic website of Sarbajit Mazumdar.
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: "⚛️"
+icon: favicon-sm-lattice.svg
 
 url: https://spinlessfermion1729.github.io
 baseurl:
