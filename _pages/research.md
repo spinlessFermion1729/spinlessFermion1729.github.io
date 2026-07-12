@@ -10,8 +10,16 @@ math: true
 
 
 <!-- HUBBARD_SHOWCASE_START -->
-{% include hubbard-showcase.html %}
+{% include hubbard-observatory.html %}
 <!-- HUBBARD_SHOWCASE_END -->
+
+
+
+
+
+
+
+
 
 
 

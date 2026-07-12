@@ -1,0 +1,191 @@
+<link rel="stylesheet" href="{{ '/assets/css/hubbard-observatory.css' | relative_url }}">
+
+<section id="hubbard-observatory" class="ho-shell" aria-labelledby="ho-title">
+  <header class="ho-header">
+    <p class="ho-eyebrow">Interactive many-body visualization</p>
+    <h2 id="ho-title">Hubbard Correlation Observatory</h2>
+    <p>
+      Explore how hopping, local repulsion, hole doping, and temperature
+      reshape charge motion and spin correlations on a square lattice.
+    </p>
+  </header>
+
+  <div class="ho-equation" aria-label="Repulsive Hubbard Hamiltonian">
+    \[
+      H=
+      \underbrace{-t\sum_{\langle i,j\rangle,\sigma}
+      \left(c^\dagger_{i\sigma}c_{j\sigma}+\mathrm{h.c.}\right)}_{
+      \text{kinetic delocalization}}
+      +
+      \underbrace{U\sum_i n_{i\uparrow}n_{i\downarrow}}_{
+      \text{local repulsion}}
+      -
+      \underbrace{\mu\sum_{i,\sigma}n_{i\sigma}}_{
+      \text{filling control}}.
+    \]
+  </div>
+
+  <div class="ho-dashboard">
+    <aside class="ho-controls">
+      <div class="ho-panel-title">
+        <div>
+          <span>Control parameters</span>
+          <strong id="ho-regime">Doped correlated regime</strong>
+        </div>
+        <button id="ho-play" type="button" aria-label="Pause animation" title="Pause animation">Ⅱ</button>
+      </div>
+
+      <label>
+        <span><b>Interaction</b><output id="ho-u-value">6.00</output></span>
+        <input id="ho-u" type="range" min="0" max="12" step="0.25" value="6">
+        <small>itinerant &nbsp; · &nbsp; \(U/t\) &nbsp; · &nbsp; local moments</small>
+      </label>
+
+      <label>
+        <span><b>Hole doping</b><output id="ho-doping-value">0.12</output></span>
+        <input id="ho-doping" type="range" min="0" max="0.35" step="0.01" value="0.12">
+        <small>half filling &nbsp; · &nbsp; \(\delta=1-n\) &nbsp; · &nbsp; doped</small>
+      </label>
+
+      <label>
+        <span><b>Temperature</b><output id="ho-temperature-value">0.12</output></span>
+        <input id="ho-temperature" type="range" min="0.02" max="0.80" step="0.01" value="0.12">
+        <small>coherent &nbsp; · &nbsp; \(T/t\) &nbsp; · &nbsp; thermal</small>
+      </label>
+
+      <div class="ho-presets">
+        <button type="button" data-preset="metal">Itinerant metal</button>
+        <button type="button" data-preset="mott">Mott / local moments</button>
+        <button type="button" data-preset="doped">Doped correlated</button>
+        <button type="button" data-preset="thermal">Thermal crossover</button>
+      </div>
+
+      <p class="ho-disclaimer">
+        The animation is qualitative. It is not a numerical solution or a
+        computed phase diagram.
+      </p>
+    </aside>
+
+    <main class="ho-main">
+      <figure class="ho-lattice-card">
+        <div class="ho-panel-title">
+          <div>
+            <span>Microscopic view</span>
+            <strong>Charge motion and spin texture</strong>
+          </div>
+          <div class="ho-live"><i></i> live</div>
+        </div>
+
+        <canvas id="ho-lattice" width="960" height="500"
+          aria-label="Animated Hubbard lattice showing electrons, holes, hopping, and virtual exchange"></canvas>
+
+        <figcaption class="ho-legend">
+          <span class="up">spin up</span>
+          <span class="down">spin down</span>
+          <span class="hole">hole</span>
+          <span class="real">allowed hop</span>
+          <span class="virtual">virtual process</span>
+        </figcaption>
+      </figure>
+
+      <div class="ho-observables">
+        <article data-observable="double">
+          <header><span>Double occupancy proxy</span><strong id="ho-double-value">0.18</strong></header>
+          <div class="ho-meter" role="meter" aria-valuemin="0" aria-valuemax="1"><i id="ho-double-meter"></i></div>
+          <small>schematic suppression relative to the uncorrelated value</small>
+        </article>
+        <article data-observable="moment">
+          <header><span>Local-moment proxy</span><strong id="ho-moment-value">0.71</strong></header>
+          <div class="ho-meter" role="meter" aria-valuemin="0" aria-valuemax="1"><i id="ho-moment-meter"></i></div>
+          <small>enhanced near half filling at strong coupling</small>
+        </article>
+        <article data-observable="coherence">
+          <header><span>Coherence proxy</span><strong id="ho-coherence-value">0.43</strong></header>
+          <div class="ho-meter" role="meter" aria-valuemin="0" aria-valuemax="1"><i id="ho-coherence-meter"></i></div>
+          <small>reduced by interaction and thermal broadening</small>
+        </article>
+        <article data-observable="exchange">
+          <header><span>Superexchange scale</span><strong id="ho-exchange-value">0.67</strong></header>
+          <div class="ho-meter" role="meter" aria-valuemin="0" aria-valuemax="1"><i id="ho-exchange-meter"></i></div>
+          <small>\(J/t\simeq4/(U/t)\) only in the strong-coupling limit</small>
+        </article>
+      </div>
+    </main>
+
+    <aside class="ho-phase-card">
+      <div class="ho-panel-title">
+        <div>
+          <span>Schematic landscape</span>
+          <strong>Correlation tendencies</strong>
+        </div>
+      </div>
+
+      <svg id="ho-phase-map" viewBox="0 0 430 330" role="img"
+        aria-label="Schematic interaction versus hole-doping landscape">
+        <defs>
+          <linearGradient id="ho-metal" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#38bdf8" stop-opacity=".36"/>
+            <stop offset="100%" stop-color="#2563eb" stop-opacity=".08"/>
+          </linearGradient>
+          <linearGradient id="ho-mott" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ef4444" stop-opacity=".34"/>
+            <stop offset="100%" stop-color="#f97316" stop-opacity=".08"/>
+          </linearGradient>
+          <radialGradient id="ho-pair">
+            <stop offset="0%" stop-color="#a855f7" stop-opacity=".42"/>
+            <stop offset="100%" stop-color="#7c3aed" stop-opacity=".03"/>
+          </radialGradient>
+          <filter id="ho-glow" x="-250%" y="-250%" width="500%" height="500%">
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <rect class="map-bg" x="52" y="28" width="330" height="244" rx="8"/>
+        <path d="M52 272V28H152C146 84 142 143 154 194C130 225 104 252 52 272Z" fill="url(#ho-mott)"/>
+        <path d="M52 272H382V168C320 162 254 166 196 190C152 210 116 239 52 272Z" fill="url(#ho-metal)"/>
+        <ellipse cx="228" cy="154" rx="112" ry="74" fill="url(#ho-pair)"/>
+
+        <g class="map-grid">
+          <path d="M52 89H382M52 150H382M52 211H382M134.5 28V272M217 28V272M299.5 28V272"/>
+        </g>
+
+        <g class="map-labels">
+          <text x="88" y="66">local moments</text><text x="88" y="82">AF / Mott tendency</text>
+          <text x="276" y="244">itinerant</text><text x="276" y="260">correlated metal</text>
+          <text x="228" y="145" text-anchor="middle">doped correlated</text>
+          <text x="228" y="162" text-anchor="middle">pairing tendency</text>
+        </g>
+
+        <path class="map-axis" d="M52 272H390M52 280V20"/>
+        <text class="axis-label" x="217" y="315" text-anchor="middle">hole doping δ</text>
+        <text class="axis-label" x="15" y="150" text-anchor="middle" transform="rotate(-90 15 150)">interaction U/t</text>
+        <text class="tick" x="52" y="293" text-anchor="middle">0</text>
+        <text class="tick" x="217" y="293" text-anchor="middle">0.18</text>
+        <text class="tick" x="382" y="293" text-anchor="middle">0.35</text>
+        <text class="tick" x="39" y="276" text-anchor="end">0</text>
+        <text class="tick" x="39" y="154" text-anchor="end">6</text>
+        <text class="tick" x="39" y="33" text-anchor="end">12</text>
+
+        <g id="ho-marker" filter="url(#ho-glow)">
+          <circle class="marker-halo" r="13"/><circle class="marker-core" r="5"/>
+        </g>
+      </svg>
+
+      <div class="ho-tendencies" aria-live="polite">
+        <div data-tendency="itinerant"><i></i>itinerant charge motion</div>
+        <div data-tendency="moments"><i></i>local-moment formation</div>
+        <div data-tendency="exchange"><i></i>virtual exchange processes</div>
+        <div data-tendency="pairing"><i></i>doped pairing correlations</div>
+        <div data-tendency="thermal"><i></i>thermal decoherence</div>
+      </div>
+
+      <p class="ho-disclaimer">
+        The coloured regions indicate qualitative tendencies only. Their
+        boundaries are not universal and are not calculated here.
+      </p>
+    </aside>
+  </div>
+</section>
+
+<script src="{{ '/assets/js/hubbard-observatory.js' | relative_url }}" defer></script>
