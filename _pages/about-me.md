@@ -3,7 +3,7 @@ layout: page
 title: About Me
 permalink: /about-me/
 nav: true
-nav_order: 6
+nav_order: 5
 description: Interests beyond academic research.
 ---
 
