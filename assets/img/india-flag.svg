@@ -1,151 +1,339 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 122 68"
+  viewBox="0 0 90 60"
   role="img"
-  aria-labelledby="flag-title flag-description"
+  aria-labelledby="india-flag-title india-flag-description"
 >
-  <title id="flag-title">Flag of India</title>
-  <desc id="flag-description">
-    Animated Indian flag with a fabric-like waving effect
+  <title id="india-flag-title">Flag of India</title>
+
+  <desc id="india-flag-description">
+    The Indian national flag moving gently in the wind.
   </desc>
 
   <defs>
     <clipPath id="flag-clip">
-      <path
-        d="
-          M 10 7
-          L 110 7
-          Q 117 16 111 25
-          Q 117 34 111 43
-          Q 117 52 110 61
-          L 10 61
-          Z
-        "
+      <rect
+        x="1"
+        y="1"
+        width="88"
+        height="58"
+        rx="3.5"
       />
     </clipPath>
 
-    <filter
-      id="cloth-wave"
-      x="-18%"
-      y="-25%"
-      width="145%"
-      height="155%"
-      color-interpolation-filters="sRGB"
-    >
-      <feTurbulence
-        type="fractalNoise"
-        baseFrequency="0.010 0.060"
-        numOctaves="2"
-        seed="7"
-        result="fabric-noise"
-      >
-        <animate
-          attributeName="baseFrequency"
-          dur="2.7s"
-          values="
-            0.010 0.055;
-            0.016 0.078;
-            0.012 0.065;
-            0.018 0.082;
-            0.010 0.055
-          "
-          repeatCount="indefinite"
-        />
-      </feTurbulence>
-
-      <feDisplacementMap
-        in="SourceGraphic"
-        in2="fabric-noise"
-        scale="7"
-        xChannelSelector="R"
-        yChannelSelector="G"
-      >
-        <animate
-          attributeName="scale"
-          dur="2.7s"
-          values="4;10;6;9;4"
-          repeatCount="indefinite"
-        />
-      </feDisplacementMap>
-    </filter>
-
     <linearGradient
-      id="fabric-highlight"
-      x1="-1"
-      y1="0"
-      x2="0"
-      y2="0"
-    >
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="45%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="55%" stop-color="#ffffff" stop-opacity="0.30"/>
-      <stop offset="65%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-
-      <animateTransform
-        attributeName="gradientTransform"
-        type="translate"
-        from="-1 0"
-        to="2 0"
-        dur="3.2s"
-        repeatCount="indefinite"
-      />
-    </linearGradient>
-
-    <linearGradient
-      id="pole-gradient"
+      id="cloth-light"
       x1="0"
       y1="0"
       x2="1"
       y2="0"
     >
-      <stop offset="0%" stop-color="#5f6368"/>
-      <stop offset="45%" stop-color="#e4e7eb"/>
-      <stop offset="100%" stop-color="#55595f"/>
+      <stop
+        offset="0"
+        stop-color="#ffffff"
+        stop-opacity="0.02"
+      />
+
+      <stop
+        offset="0.26"
+        stop-color="#ffffff"
+        stop-opacity="0.14"
+      />
+
+      <stop
+        offset="0.48"
+        stop-color="#000000"
+        stop-opacity="0.055"
+      />
+
+      <stop
+        offset="0.72"
+        stop-color="#ffffff"
+        stop-opacity="0.11"
+      />
+
+      <stop
+        offset="1"
+        stop-color="#000000"
+        stop-opacity="0.035"
+      />
+
+      <animateTransform
+        attributeName="gradientTransform"
+        type="translate"
+        values="-0.08 0; 0.08 0; -0.08 0"
+        dur="12s"
+        repeatCount="indefinite"
+      />
     </linearGradient>
+
+    <filter
+      id="soft-shadow"
+      x="-20%"
+      y="-20%"
+      width="140%"
+      height="145%"
+    >
+      <feDropShadow
+        dx="0"
+        dy="1.4"
+        stdDeviation="1.2"
+        flood-color="#000000"
+        flood-opacity="0.18"
+      />
+    </filter>
+
+    <line
+      id="chakra-spoke"
+      x1="45"
+      y1="24.5"
+      x2="45"
+      y2="29.1"
+      stroke="#000080"
+      stroke-width="0.5"
+      stroke-linecap="round"
+    />
   </defs>
 
-  <rect
-    x="4"
-    y="2"
-    width="4"
-    height="64"
-    rx="2"
-    fill="url(#pole-gradient)"
-  />
-
-  <circle
-    cx="6"
-    cy="3.5"
-    r="3.2"
-    fill="#d5a328"
-  />
-
-  <g filter="url(#cloth-wave)" clip-path="url(#flag-clip)">
-    <rect x="9" y="7" width="108" height="18" fill="#ff9933"/>
-    <rect x="9" y="25" width="108" height="18" fill="#ffffff"/>
-    <rect x="9" y="43" width="108" height="18" fill="#138808"/>
-
-    <g
-      fill="none"
-      stroke="#000080"
-      stroke-width="0.75"
-      stroke-linecap="round"
+  <g
+    clip-path="url(#flag-clip)"
+    filter="url(#soft-shadow)"
+  >
+    <!-- Saffron band -->
+    <path
+      fill="#ff9933"
+      d="
+        M1 1
+        C18 1.4 31 0.2 45 1.1
+        C60 2.1 75 0.4 89 1.5
+        L89 20.5
+        C74 19.3 61 21.1 45 20
+        C30 19 17 20.8 1 20
+        Z
+      "
     >
-      <circle cx="62" cy="34" r="7.5"/>
-      <line x1="63.500" y1="34.000" x2="69.400" y2="34.000" /><line x1="63.449" y1="34.388" x2="69.148" y2="35.915" /><line x1="63.299" y1="34.750" x2="68.409" y2="37.700" /><line x1="63.061" y1="35.061" x2="67.233" y2="39.233" /><line x1="62.750" y1="35.299" x2="65.700" y2="40.409" /><line x1="62.388" y1="35.449" x2="63.915" y2="41.148" /><line x1="62.000" y1="35.500" x2="62.000" y2="41.400" /><line x1="61.612" y1="35.449" x2="60.085" y2="41.148" /><line x1="61.250" y1="35.299" x2="58.300" y2="40.409" /><line x1="60.939" y1="35.061" x2="56.767" y2="39.233" /><line x1="60.701" y1="34.750" x2="55.591" y2="37.700" /><line x1="60.551" y1="34.388" x2="54.852" y2="35.915" /><line x1="60.500" y1="34.000" x2="54.600" y2="34.000" /><line x1="60.551" y1="33.612" x2="54.852" y2="32.085" /><line x1="60.701" y1="33.250" x2="55.591" y2="30.300" /><line x1="60.939" y1="32.939" x2="56.767" y2="28.767" /><line x1="61.250" y1="32.701" x2="58.300" y2="27.591" /><line x1="61.612" y1="32.551" x2="60.085" y2="26.852" /><line x1="62.000" y1="32.500" x2="62.000" y2="26.600" /><line x1="62.388" y1="32.551" x2="63.915" y2="26.852" /><line x1="62.750" y1="32.701" x2="65.700" y2="27.591" /><line x1="63.061" y1="32.939" x2="67.233" y2="28.767" /><line x1="63.299" y1="33.250" x2="68.409" y2="30.300" /><line x1="63.449" y1="33.612" x2="69.148" y2="32.085" />
-    </g>
+      <animate
+        attributeName="d"
+        dur="11s"
+        repeatCount="indefinite"
+        calcMode="spline"
+        keyTimes="0;0.5;1"
+        keySplines="
+          0.42 0 0.58 1;
+          0.42 0 0.58 1
+        "
+        values="
+          M1 1
+          C18 1.4 31 0.2 45 1.1
+          C60 2.1 75 0.4 89 1.5
+          L89 20.5
+          C74 19.3 61 21.1 45 20
+          C30 19 17 20.8 1 20
+          Z;
 
-    <circle cx="62" cy="34" r="1.25" fill="#000080"/>
+          M1 1
+          C18 0.4 31 1.8 45 0.9
+          C60 0 75 1.9 89 0.8
+          L89 19.6
+          C74 20.8 61 19.1 45 20.2
+          C30 21.1 17 19.2 1 20
+          Z;
 
+          M1 1
+          C18 1.4 31 0.2 45 1.1
+          C60 2.1 75 0.4 89 1.5
+          L89 20.5
+          C74 19.3 61 21.1 45 20
+          C30 19 17 20.8 1 20
+          Z
+        "
+      />
+    </path>
+
+    <!-- White band -->
+    <path
+      fill="#ffffff"
+      d="
+        M1 20
+        C17 20.8 30 19 45 20
+        C61 21.1 74 19.3 89 20.5
+        L89 40.1
+        C74 39 60 40.8 45 39.8
+        C30 38.9 17 40.7 1 40
+        Z
+      "
+    >
+      <animate
+        attributeName="d"
+        dur="11s"
+        repeatCount="indefinite"
+        calcMode="spline"
+        keyTimes="0;0.5;1"
+        keySplines="
+          0.42 0 0.58 1;
+          0.42 0 0.58 1
+        "
+        values="
+          M1 20
+          C17 20.8 30 19 45 20
+          C61 21.1 74 19.3 89 20.5
+          L89 40.1
+          C74 39 60 40.8 45 39.8
+          C30 38.9 17 40.7 1 40
+          Z;
+
+          M1 20
+          C17 19.2 30 21.1 45 20.2
+          C61 19.1 74 20.8 89 19.6
+          L89 39.4
+          C74 40.7 60 39 45 40.1
+          C30 41 17 39.3 1 40
+          Z;
+
+          M1 20
+          C17 20.8 30 19 45 20
+          C61 21.1 74 19.3 89 20.5
+          L89 40.1
+          C74 39 60 40.8 45 39.8
+          C30 38.9 17 40.7 1 40
+          Z
+        "
+      />
+    </path>
+
+    <!-- Green band -->
+    <path
+      fill="#138808"
+      d="
+        M1 40
+        C17 40.7 30 38.9 45 39.8
+        C60 40.8 74 39 89 40.1
+        L89 59
+        C74 57.9 60 59.5 45 58.7
+        C30 57.8 17 59.4 1 59
+        Z
+      "
+    >
+      <animate
+        attributeName="d"
+        dur="11s"
+        repeatCount="indefinite"
+        calcMode="spline"
+        keyTimes="0;0.5;1"
+        keySplines="
+          0.42 0 0.58 1;
+          0.42 0 0.58 1
+        "
+        values="
+          M1 40
+          C17 40.7 30 38.9 45 39.8
+          C60 40.8 74 39 89 40.1
+          L89 59
+          C74 57.9 60 59.5 45 58.7
+          C30 57.8 17 59.4 1 59
+          Z;
+
+          M1 40
+          C17 39.3 30 41 45 40.1
+          C60 39 74 40.7 89 39.4
+          L89 58.5
+          C74 59.5 60 58 45 59
+          C30 59.7 17 58.2 1 59
+          Z;
+
+          M1 40
+          C17 40.7 30 38.9 45 39.8
+          C60 40.8 74 39 89 40.1
+          L89 59
+          C74 57.9 60 59.5 45 58.7
+          C30 57.8 17 59.4 1 59
+          Z
+        "
+      />
+    </path>
+
+    <!-- Gentle fabric shading -->
     <rect
-      x="9"
-      y="7"
-      width="108"
-      height="54"
-      fill="url(#fabric-highlight)"
-      opacity="0.65"
+      x="1"
+      y="1"
+      width="88"
+      height="58"
+      fill="url(#cloth-light)"
     />
+
+    <!-- Ashoka Chakra -->
+    <g>
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        dur="11s"
+        repeatCount="indefinite"
+        calcMode="spline"
+        keyTimes="0;0.5;1"
+        keySplines="
+          0.42 0 0.58 1;
+          0.42 0 0.58 1
+        "
+        values="
+          0 0;
+          0.25 0.18;
+          0 0
+        "
+      />
+
+      <circle
+        cx="45"
+        cy="30"
+        r="6.25"
+        fill="none"
+        stroke="#000080"
+        stroke-width="0.85"
+      />
+
+      <circle
+        cx="45"
+        cy="30"
+        r="0.95"
+        fill="#000080"
+      />
+
+      <use href="#chakra-spoke"/>
+      <use href="#chakra-spoke" transform="rotate(15 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(30 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(45 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(60 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(75 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(90 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(105 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(120 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(135 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(150 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(165 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(180 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(195 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(210 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(225 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(240 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(255 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(270 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(285 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(300 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(315 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(330 45 30)"/>
+      <use href="#chakra-spoke" transform="rotate(345 45 30)"/>
+    </g>
   </g>
+
+  <!-- Thin outline only; no pole or handle -->
+  <rect
+    x="1"
+    y="1"
+    width="88"
+    height="58"
+    rx="3.5"
+    fill="none"
+    stroke="#657080"
+    stroke-width="0.7"
+    stroke-opacity="0.52"
+  />
 </svg>
