@@ -274,7 +274,7 @@ working in the Condensed Matter Theory group of
 
 My research focuses on theoretical condensed matter physics, particularly
 **strongly correlated quantum systems**, **unconventional superconductivity**,
-**altermagnetism**, **topological phases of matter**, and
+**altermagnetism**, **different emergent phases of matter**, and
 **quantum transport**.
 
 I am interested in understanding how interactions, symmetry, topology,

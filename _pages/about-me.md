@@ -82,6 +82,8 @@ Outside research, Western classical music is an important part of my life. I par
   </div>
 </div>
 
+I also love the music of [The Beatles](https://en.wikipedia.org/wiki/The_Beatles), and I enjoy listening to [folk music](https://en.wikipedia.org/wiki/Folk_music) and [country music](https://en.wikipedia.org/wiki/Country_music). I am especially drawn to memorable melodies, lyrical storytelling, and the way these musical traditions transform ordinary lives, places, journeys, and memories into songs.
+
 I am deeply inspired by [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman), particularly by his curiosity, clarity of thought, and playful approach to difficult scientific questions. I also admire [Bob Dylan](https://en.wikipedia.org/wiki/Bob_Dylan) for the way he combines poetry, music, storytelling, and social observation. Above all, [Rabindranath Tagore](https://en.wikipedia.org/wiki/Rabindranath_Tagore) occupies a particularly important place in my cultural and literary life. His poetry, music, philosophy, humanism, and the emotional world of [Rabindra Sangeet](https://en.wikipedia.org/wiki/Rabindra_Sangeet) continue to inspire me.
 
 I enjoy cinema, particularly the films of [Satyajit Ray](https://en.wikipedia.org/wiki/Satyajit_Ray) and [Quentin Tarantino](https://en.wikipedia.org/wiki/Quentin_Tarantino). Their films appeal to me for very different reasons: Ray's sensitive observation of human lives and society, and Tarantino's energetic visual storytelling, dialogue, and distinctive cinematic style. I also enjoy writing poetry in both **Bengali and English**, which gives me a different way to explore emotions, memories, ideas, and everyday experiences outside the structured language of scientific research.
