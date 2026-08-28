@@ -1,10 +1,14 @@
 metadata:
-  last_updated: '2026-07-24'
+  last_updated: '2026-08-28'
 papers:
   1YhOrqwAAAAJ:2osOgNQ5qMEC:
     citations: 1
     title: Relativistic Transformation of Spherical Co ordinates (t, r,{\theta},{\phi})
     year: '2020'
+  1YhOrqwAAAAJ:4TOpqqG69KYC:
+    citations: 0
+    title: Exotic Electronic Order in a Parabolic Kagome Semimetal
+    year: '2026'
   1YhOrqwAAAAJ:8k81kl-MbHgC:
     citations: 0
     title: Nonlinear Hall Effect in Metal-Organic Frameworks
@@ -14,7 +18,7 @@ papers:
     title: Studying the Curvature and Determining the Tangential Velocity profile of a Rotating Fluid using Navier-Stokes equations
     year: '2020'
   1YhOrqwAAAAJ:ULOm3_A8WrAC:
-    citations: 0
+    citations: 1
     title: 'Enhanced Andreev reflection in flat-band systems: Wave packet dynamics, dc transport, and the Josephson effect'
     year: '2026'
   1YhOrqwAAAAJ:WF5omc3nYNoC:
@@ -22,7 +26,7 @@ papers:
     title: Anomalous pumping in the non-Hermitian Rice-Mele model
     year: '2025'
   1YhOrqwAAAAJ:YOwf2qJgpHMC:
-    citations: 0
+    citations: 2
     title: Altermagnons at the metal-insulator transition
     year: '2026'
   1YhOrqwAAAAJ:YsMSGLbcyi4C:
