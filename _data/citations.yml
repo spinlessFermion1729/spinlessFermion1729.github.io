@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-08-28'
+  last_updated: '2026-09-04'
 papers:
   1YhOrqwAAAAJ:2osOgNQ5qMEC:
     citations: 1
@@ -17,8 +17,12 @@ papers:
     citations: 0
     title: Studying the Curvature and Determining the Tangential Velocity profile of a Rotating Fluid using Navier-Stokes equations
     year: '2020'
+  1YhOrqwAAAAJ:M3ejUd6NZC8C:
+    citations: 0
+    title: Engineering altermagnetic orders on the square-kagome lattice through Wyckoff-selective sublattice polarization
+    year: '2026'
   1YhOrqwAAAAJ:ULOm3_A8WrAC:
-    citations: 1
+    citations: 2
     title: 'Enhanced Andreev reflection in flat-band systems: Wave packet dynamics, dc transport, and the Josephson effect'
     year: '2026'
   1YhOrqwAAAAJ:WF5omc3nYNoC:
