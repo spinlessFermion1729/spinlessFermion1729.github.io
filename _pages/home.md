@@ -36,7 +36,7 @@ campus:
   license: CC BY-SA 3.0
 
 themes:
-  - title: Superconductivity at strong coupling
+  - title: Unconventional superconductivity
     text: Slave-boson theory of pairing in the Hubbard model, beyond the weak-coupling spin-fluctuation picture.
     link: /research/#superconducting-pairing-at-strong-coupling
   - title: Altermagnetism
