@@ -83,14 +83,14 @@ al_folio:
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 search_enabled: false
 socials_in_search: false
 posts_in_search: false
 bib_search: false
 
 # Dimensions
-max_width: 930px
+max_width: 1040px
 
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
@@ -216,6 +216,11 @@ kramdown:
 include: ["_pages"]
 exclude:
   - al-folio-upgrade-report.md
+  - AGENTS.md
+  - CLAUDE.md
+  - requirements.txt
+  - test/
+  - .agents/
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md

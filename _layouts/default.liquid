@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <!-- Head -->
+  <head>
+    {% if page.redirect %}
+      {% if page.redirect == true %}
+        {% assign redirect = site.baseurl | append: '/' %}
+      {% elsif page.redirect contains '://' %}
+        {% assign redirect = page.redirect %}
+      {% else %}
+        {% assign redirect = page.redirect | relative_url %}
+      {% endif %}
+      <meta http-equiv="refresh" content="3; url={{ redirect }}">
+    {% endif %}
+    {% include head.liquid %}
+
+    <!-- Site theme: editorial typography and colour system (local override, see .al-folio-overrides.yml) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Noto+Serif+Bengali:wght@500&display=swap"
+    >
+    <link rel="stylesheet" href="{{ '/assets/css/editorial.css' | relative_url | bust_file_cache }}">
+  </head>
+
+  <!-- Body -->
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %} layout-{{ page.layout | default: 'none' }}">
+    <!-- Header -->
+    {% include header.liquid %}
+
+    <!-- Content -->
+    <div class="container mt-5" role="main">
+      {% if page.toc and page.toc.sidebar %}
+        {% assign toc_collapse = page.toc.collapse | default: 'expanded' %}
+        {% assign toc_collapse_depth = page.toc.collapse_depth | default: '' %}
+        {% if page.toc.sidebar == 'right' %}
+          <div class="row">
+            <!-- main content area -->
+            <div class="col-sm-9">{{ content }}</div>
+            <!-- sidebar, which will move to the top on a small screen -->
+            <div class="col-sm-3">
+              <nav
+                id="toc-sidebar"
+                class="sticky-top toc toc-sidebar"
+                aria-label="Table of contents"
+                data-toc-collapse="{{ toc_collapse }}"
+                data-toc-collapse-depth="{{ toc_collapse_depth }}"
+              ></nav>
+            </div>
+          </div>
+        {% else %}
+          <div class="row">
+            <!-- sidebar, which will move to the top on a small screen -->
+            <div class="col-sm-3">
+              <nav
+                id="toc-sidebar"
+                class="sticky-top toc toc-sidebar"
+                aria-label="Table of contents"
+                data-toc-collapse="{{ toc_collapse }}"
+                data-toc-collapse-depth="{{ toc_collapse_depth }}"
+              ></nav>
+            </div>
+            <!-- main content area -->
+            <div class="col-sm-9">{{ content }}</div>
+          </div>
+        {% endif %}
+      {% else %}
+        {{ content }}
+      {% endif %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="ed-footer" role="contentinfo">
+      <div class="container ed-footer-inner">
+        <div class="ed-footer-id">
+          <span class="ed-footer-name">
+            {{- site.first_name }}
+            {{ site.last_name -}}
+          </span>
+          <span class="ed-footer-meta">{{ site.footer_text | strip }}</span>
+          <span class="ed-footer-meta">&copy; {{ site.time | date: '%Y' }}</span>
+        </div>
+        <nav class="ed-footer-links" aria-label="Profiles">
+          <a href="mailto:{{ site.data.socials.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>
+          <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}"
+            ><i class="ai ai-google-scholar" aria-hidden="true"></i> Scholar</a
+          >
+          <a href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}"
+            ><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a
+          >
+          <a href="https://x.com/{{ site.data.socials.x_username }}"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i> X</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    {% include scripts.liquid %}
+  </body>
+</html>

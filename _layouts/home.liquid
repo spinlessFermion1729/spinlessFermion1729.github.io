@@ -1,0 +1,177 @@
+---
+layout: default
+---
+{% assign socials = site.data.socials %}
+
+<div class="ed-home">
+  <!-- Hero -->
+  <section class="ed-hero" aria-label="Introduction">
+    <figure class="ed-hero-photo">
+      <img
+        src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}"
+        alt="Portrait of {{ site.first_name }} {{ site.last_name }}"
+        width="440"
+        height="440"
+        loading="eager"
+      >
+    </figure>
+
+    <div class="ed-hero-text">
+      <p class="ed-eyebrow">{{ page.hero.eyebrow }}</p>
+      <h1 class="ed-hero-name">
+        {{ site.first_name }}
+        {{ site.last_name }}
+        {%- if page.hero.flag %}
+          <a class="ed-flag" href="https://en.wikipedia.org/wiki/India" title="India" aria-label="Open the Wikipedia page for India">
+            <img src="{{ page.hero.flag | relative_url }}" alt="Animated flag of India">
+          </a>
+        {%- endif %}
+      </h1>
+
+      {% if page.hero.native_name %}
+        <div class="ed-native-name">
+          <span lang="bn">{{ page.hero.native_name }}</span>
+          {% if page.hero.pronunciation %}
+            <button
+              class="ed-pronounce"
+              type="button"
+              data-audio="{{ page.hero.pronunciation | relative_url }}"
+              title="Listen to the pronunciation of my name"
+              aria-label="Listen to the pronunciation of {{ site.first_name }} {{ site.last_name }}"
+              aria-pressed="false"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3Zm5-3a1 1 0 1 0-2 0 3 3 0 0 1-6 0 1 1 0 1 0-2 0 5 5 0 0 0 4 4.9V19H8.5a1 1 0 1 0 0 2h7a1 1 0 1 0 0-2H13v-3.1A5 5 0 0 0 17 11Z"/>
+              </svg>
+            </button>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <p class="ed-hero-role">{{ page.hero.role }}</p>
+      <p class="ed-hero-affil">{{ page.hero.affiliation }}</p>
+
+      <div class="ed-actions">
+        <a class="ed-btn ed-btn-primary" href="mailto:{{ socials.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>
+        <a class="ed-btn" href="https://scholar.google.com/citations?user={{ socials.scholar_userid }}"
+          ><i class="ai ai-google-scholar" aria-hidden="true"></i> Google Scholar</a
+        >
+        <a class="ed-btn" href="https://www.linkedin.com/in/{{ socials.linkedin_username }}"
+          ><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a
+        >
+        <a class="ed-btn ed-btn-icon" href="https://x.com/{{ socials.x_username }}" aria-label="X (Twitter)" title="X (Twitter)"
+          ><i class="fa-brands fa-x-twitter" aria-hidden="true"></i
+        ></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Biography + contact card -->
+  <section class="ed-intro">
+    <div class="ed-bio">
+      <h2 class="ed-section-title">About</h2>
+      {{ content }}
+    </div>
+
+    <aside class="ed-card ed-contact" aria-label="Contact information">
+      {% if page.campus %}
+        <a class="ed-campus" href="{{ page.campus.link }}" title="{{ page.campus.title }}">
+          <img src="{{ page.campus.image | relative_url }}" alt="{{ page.campus.alt }}" loading="lazy">
+        </a>
+        <p class="ed-campus-credit">
+          {{ page.campus.caption }} · Photo: {{ page.campus.credit_author }}, <a href="{{ page.campus.credit_link }}">Wikimedia Commons</a>,
+          {{ page.campus.license }}
+        </p>
+      {% endif %}
+      <h3>Office</h3>
+      <address>
+        {% for line in page.contact.address %}
+          {{ line -}}
+          <br>
+        {% endfor %}
+      </address>
+      <ul class="ed-contact-list">
+        <li>
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:{{ socials.email }}">{{ socials.email }}</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          <a href="tel:{{ page.contact.phone | remove: ' ' | remove: '-' }}">{{ page.contact.phone }}</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+          <a href="{{ page.contact.institutional }}">Institutional webpage</a>
+        </li>
+      </ul>
+    </aside>
+  </section>
+
+  <!-- Research themes -->
+  {% if page.themes %}
+    <section class="ed-section" aria-labelledby="themes-title">
+      <div class="ed-section-head">
+        <h2 class="ed-section-title" id="themes-title">Research</h2>
+        <a class="ed-more" href="{{ '/research/' | relative_url }}">Research overview <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="ed-themes">
+        {% for theme in page.themes %}
+          <a class="ed-card ed-theme" href="{{ theme.link | relative_url }}">
+            <span class="ed-theme-index">{{ forloop.index | prepend: '0' }}</span>
+            <h3>{{ theme.title }}</h3>
+            <p>{{ theme.text }}</p>
+            <span class="ed-theme-go">Read more <span aria-hidden="true">→</span></span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  <!-- News -->
+  {% if page.announcements and page.announcements.enabled and site.news != blank %}
+    <section class="ed-section" aria-labelledby="news-title">
+      <div class="ed-section-head">
+        <h2 class="ed-section-title" id="news-title">News</h2>
+        <a class="ed-more" href="{{ '/news/' | relative_url }}">All news <span aria-hidden="true">→</span></a>
+      </div>
+      <ol class="ed-news">
+        {% assign news = site.news | reverse %}
+        {% for item in news limit: page.announcements.limit %}
+          <li>
+            <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: '%b %Y' }}</time>
+            <div>
+              {% if item.inline %}
+                {{ item.content | remove: '<p>' | remove: '</p>' }}
+              {% else %}
+                <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+    </section>
+  {% endif %}
+
+  <!-- Recent publications -->
+  {% if page.recent_papers %}
+    <section class="ed-section" aria-labelledby="papers-title">
+      <div class="ed-section-head">
+        <h2 class="ed-section-title" id="papers-title">Recent publications</h2>
+        <a class="ed-more" href="{{ '/publications/' | relative_url }}">All publications <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="publications ed-recent">
+        {% bibliography --group_by none --max 3 %}
+      </div>
+    </section>
+  {% endif %}
+
+  <!-- Visitor map -->
+  {% if page.visitor_counter %}
+    <section class="ed-visitors" aria-labelledby="visitors-title">
+      <h2 id="visitors-title">Visitors around the world</h2>
+      <img src="{{ page.visitor_counter }}" alt="Country flags showing visitors to this website" loading="lazy">
+    </section>
+  {% endif %}
+</div>
+
+<script src="{{ '/assets/js/home.js' | relative_url | bust_file_cache }}" defer></script>

@@ -1,0 +1,18 @@
+{% comment %}
+  Hook called by al_folio_core's bib layout before the venue line is assembled.
+  Renders journal articles in physics style: "Phys. Rev. B 114, 194511 (2026)",
+  and preprints as "arXiv:2607.18389 (2026)".
+{% endcomment %}
+{% if entry.type == 'article' %}
+  {% assign ed_journal = entry.journal
+    | replace: 'Physical Review Letters', 'Phys. Rev. Lett.'
+    | replace: 'Physical Review B', 'Phys. Rev. B'
+    | replace: 'Physical Review Materials', 'Phys. Rev. Mater.'
+    | replace: 'Physical Review Research', 'Phys. Rev. Res.'
+    | replace: 'Journal of Physics: Condensed Matter', 'J. Phys.: Condens. Matter'
+    | replace: 'arXiv preprint ', ''
+  %}
+  {% capture entrytype %}<em>{{ ed_journal }}</em>{% if entry.volume %} <b>{{ entry.volume }}</b>{% endif %}{% if entry.pages %}, {{ entry.pages }}{% endif %}{% if entry.year %} ({{ entry.year }}){% endif %}{% endcapture %}
+  {% assign entrymonth = '' %}
+  {% assign entryyear = '' %}
+{% endif %}
