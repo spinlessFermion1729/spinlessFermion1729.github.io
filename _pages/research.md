@@ -17,7 +17,7 @@ compute momentum- and frequency-resolved response functions.
 </p>
 
 <nav class="sx-toc" aria-label="Research directions">
-  <a href="#superconductivity"><span>01</span> Strongly Correlated Superconductivity</a>
+  <a href="#superconductivity"><span>01</span> Unconventional Superconductivity</a>
   <a href="#altermagnetism"><span>02</span> Altermagnetism and Collective Spin Excitations</a>
   <a href="#transport"><span>03</span> Quantum Transport, Band Geometry, and Topology</a>
   <a href="#hubbard"><span>04</span> Interactive Physics: The Hubbard Model</a>
@@ -25,7 +25,7 @@ compute momentum- and frequency-resolved response functions.
 
 <section class="sx-rs sx-reveal" id="superconductivity" aria-labelledby="rs-sc-title">
 <p class="sx-kicker">01 · Research direction</p>
-<h2 id="rs-sc-title">Strongly Correlated Superconductivity</h2>
+<h2 id="rs-sc-title">Unconventional Superconductivity</h2>
 <p class="sx-rs-lead">How does superconducting pairing emerge when local electronic correlations are strong, in the regime where weak-coupling spin-fluctuation theory is no longer controlled?</p>
 
 <div class="sx-rs-grid">
@@ -98,6 +98,26 @@ branches in the Mott insulator.
 {% include research-figure.liquid id="altermagnet-real-space" %}
 </div>
 </div>
+
+<figure class="sx-magnon" data-magnon>
+  <div class="sx-magnon-stage">
+    <canvas class="sx-magnon-canvas" aria-label="Interactive lattice of spins: click to launch a spin wave"></canvas>
+    <div class="sx-magnon-inset">
+      <canvas class="sx-magnon-inset" aria-hidden="true"></canvas>
+      <span><i class="is-a"></i>ω<sub>+</sub> <i class="is-b"></i>ω<sub>−</sub></span>
+    </div>
+    <span class="sx-chip">Click to launch a magnon</span>
+  </div>
+  <figcaption>
+    Illustrative spin dynamics of a minimal d-wave altermagnet: Néel order on a square lattice with ferromagnetic
+    second-neighbour exchange J<sub>2</sub> = −0.6 J<sub>1</sub> along (1, 1) on sublattice A and along (1, −1) on
+    sublattice B. A local spin tilt launches magnons whose two chiralities are split,
+    ω<sub>±</sub>(k) = √(Ā² − B²) ± 2S|J<sub>2</sub>| sin k<sub>x</sub> sin k<sub>y</sub> (inset, along the zone diagonal).
+    Colour shows which sublattice carries more of the spin-wave intensity (blue: A, teal: B); the isotropic part
+    cancels and the d-wave, four-lobed pattern of the splitting remains. Classical Landau–Lifshitz simulation with
+    periodic boundaries, not research data.
+  </figcaption>
+</figure>
 </section>
 
 <section class="sx-rs sx-reveal" id="transport" aria-labelledby="rs-tr-title">
@@ -151,3 +171,5 @@ produce anomalous pumping, including pumping with no Hermitian counterpart.
 
 <!-- HUBBARD_SHOWCASE_END -->
 </section>
+
+<script src="{{ '/assets/js/physics-magnon.js' | relative_url | bust_file_cache }}" defer></script>

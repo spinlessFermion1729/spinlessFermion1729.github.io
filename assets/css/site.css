@@ -710,32 +710,6 @@ html[data-theme="dark"] .sx-btn-primary {
   min-height: 420px;
 }
 
-.sx-lattice {
-  position: absolute;
-  inset: 50% auto auto 50%;
-  width: min(440px, 100%);
-  height: auto;
-  transform: translate(-50%, -50%);
-}
-
-#sx-dots circle {
-  fill: color-mix(in srgb, var(--sx-accent) 30%, transparent);
-}
-
-.sx-lattice-bz {
-  fill: none;
-  stroke: color-mix(in srgb, var(--sx-accent-2) 55%, transparent);
-  stroke-width: 1.2;
-  stroke-dasharray: 5 6;
-}
-
-.sx-lattice-arc {
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  opacity: 0.5;
-}
-
 .sx-portrait {
   position: relative;
   z-index: 1;
@@ -1667,6 +1641,226 @@ html.sx-reveal-ready .sx-reveal {
 }
 
 /* ---------------------------------------------------------------------------
+   Physics animations
+   ------------------------------------------------------------------------ */
+
+html,
+body {
+  overflow-x: clip;
+}
+
+.sx-hero {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Live Fermi surface behind the hero (assets/js/physics-fermi.js) */
+.sx-fermi-canvas {
+  position: absolute;
+  top: -2rem;
+  bottom: -2.5rem;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  height: calc(100% + 4.5rem);
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: 0.75;
+  -webkit-mask-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.22) 38%, #000 62%),
+    linear-gradient(180deg, transparent 0%, #000 14%, #000 82%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.22) 38%, #000 62%),
+    linear-gradient(180deg, transparent 0%, #000 14%, #000 82%, transparent 100%);
+  mask-composite: intersect;
+}
+
+html[data-theme="dark"] .sx-fermi-canvas {
+  opacity: 0.9;
+}
+
+.sx-fermi-readout {
+  position: absolute;
+  right: 0;
+  bottom: -1.6rem;
+  margin: 0;
+  color: var(--sx-faint) !important;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+
+.sx-fermi-readout.is-lifshitz {
+  animation: sx-lifshitz 1.2s ease;
+}
+
+@keyframes sx-lifshitz {
+  0% {
+    color: var(--sx-accent-2);
+  }
+
+  100% {
+    color: var(--sx-faint);
+  }
+}
+
+/* Wave packet along the native name (assets/js/site.js) */
+.sx-native-name {
+  position: relative;
+  display: inline-block;
+}
+
+.sx-packet {
+  position: absolute;
+  inset: -4px -6px -14px;
+  width: calc(100% + 12px);
+  height: calc(100% + 18px);
+  pointer-events: none;
+}
+
+.sx-native-name.is-playing {
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    var(--sx-muted) calc(var(--packet-x, 0%) - var(--packet-w, 10%) * 2),
+    var(--sx-accent) var(--packet-x, 0%),
+    var(--sx-muted) calc(var(--packet-x, 0%) + var(--packet-w, 10%) * 2)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Magnon figure (assets/js/physics-magnon.js) */
+.sx-magnon {
+  margin: 2.5rem 0 0;
+}
+
+.sx-magnon-stage {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--sx-border);
+  border-radius: var(--sx-radius);
+  background: var(--sx-surface);
+  box-shadow: var(--sx-shadow-sm);
+}
+
+.sx-magnon-canvas {
+  display: block;
+  width: 100%;
+  height: 380px;
+  cursor: crosshair;
+}
+
+.sx-magnon-stage > .sx-chip {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  pointer-events: none;
+}
+
+div.sx-magnon-inset {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  width: 190px;
+  padding: 0.4rem 0.5rem 0.2rem;
+  border: 1px solid var(--sx-border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--sx-surface) 88%, transparent);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+canvas.sx-magnon-inset {
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
+div.sx-magnon-inset span {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--sx-muted);
+  font-size: 0.7rem;
+}
+
+div.sx-magnon-inset i {
+  display: inline-block;
+  width: 12px;
+  height: 2px;
+  margin-left: 0.3rem;
+  border-radius: 2px;
+}
+
+div.sx-magnon-inset i.is-a {
+  background: var(--sx-accent);
+}
+
+div.sx-magnon-inset i.is-b {
+  background: var(--sx-accent-2);
+}
+
+.sx-magnon figcaption {
+  max-width: 860px;
+  margin-top: 0.7rem;
+  color: var(--sx-muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+/* Theme toggle domain wall (assets/js/physics-theme.js) */
+::view-transition-old(root),
+::view-transition-new(root),
+::view-transition-group(sx-domain-wall),
+::view-transition-new(sx-domain-wall) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-group(sx-domain-wall) {
+  z-index: 1;
+}
+
+.sx-domain-wall {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .sx-fermi-canvas {
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.32) 10%, rgba(0, 0, 0, 0.1) 45%, transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.32) 10%, rgba(0, 0, 0, 0.1) 45%, transparent 100%);
+  }
+
+  .sx-fermi-readout {
+    position: static;
+    margin-top: 0.5rem;
+  }
+
+  .sx-magnon-canvas {
+    height: 260px;
+  }
+
+  div.sx-magnon-inset {
+    width: 150px;
+  }
+
+  canvas.sx-magnon-inset {
+    height: 74px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
    Responsive
    ------------------------------------------------------------------------ */
 
@@ -1723,10 +1917,6 @@ html.sx-reveal-ready .sx-reveal {
     order: -1;
     justify-items: start;
     min-height: 0;
-  }
-
-  .sx-lattice {
-    display: none;
   }
 
   .sx-portrait {

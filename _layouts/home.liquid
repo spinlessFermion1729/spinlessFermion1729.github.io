@@ -11,7 +11,10 @@ layout: default
       <h1 class="sx-hero-name" id="hero-name">{{ p.name }}</h1>
 
       <div class="sx-native">
-        <span lang="bn">{{ p.native_name }}</span>
+        <span class="sx-native-name" lang="bn">
+          {{- p.native_name -}}
+          <canvas class="sx-packet" aria-hidden="true"></canvas
+        ></span>
         <button
           class="sx-pronounce"
           type="button"
@@ -60,21 +63,6 @@ layout: default
     </div>
 
     <div class="sx-hero-visual">
-      <svg class="sx-lattice" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
-        <defs>
-          <pattern id="sx-dots" width="25" height="25" patternUnits="userSpaceOnUse">
-            <circle cx="12.5" cy="12.5" r="1.6"></circle>
-          </pattern>
-          <linearGradient id="sx-arc" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" style="stop-color: var(--sx-accent)"></stop>
-            <stop offset="1" style="stop-color: var(--sx-accent-2)"></stop>
-          </linearGradient>
-        </defs>
-        <rect class="sx-lattice-dots" width="400" height="400" fill="url(#sx-dots)"></rect>
-        <rect class="sx-lattice-bz" x="62.5" y="62.5" width="275" height="275" transform="rotate(45 200 200)"></rect>
-        <path class="sx-lattice-arc" d="M 40 120 Q 200 230 360 120" stroke="url(#sx-arc)"></path>
-        <path class="sx-lattice-arc" d="M 40 280 Q 200 170 360 280" stroke="url(#sx-arc)"></path>
-      </svg>
       <figure class="sx-portrait">
         <img src="{{ p.portrait | relative_url }}" alt="Portrait of {{ p.name }}" width="395" height="395" loading="eager">
       </figure>
@@ -155,3 +143,5 @@ layout: default
     </section>
   {% endif %}
 </div>
+
+<script src="{{ '/assets/js/physics-fermi.js' | relative_url | bust_file_cache }}" defer></script>
