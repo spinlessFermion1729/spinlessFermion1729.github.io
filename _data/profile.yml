@@ -1,0 +1,24 @@
+# Single source for identity, affiliation and contact details used across the site.
+name: Sarbajit Mazumdar
+native_name: সর্বজিৎ মজুমদার
+pronunciation: /assets/audio/name-pronunciation.mp3
+portrait: /assets/img/prof_pic.jpg
+role: Ph.D. Student in Theoretical Physics
+chair: Theoretische Physik I (TP1)
+university: Julius-Maximilians-Universität Würzburg
+university_url: https://www.uni-wuerzburg.de/en/
+group_lead: Prof. Ronny Thomale
+group_lead_url: https://www.physik.uni-wuerzburg.de/tp1/team/professoren/prof-dr-ronny-thomale/
+institutional_url: https://www.physik.uni-wuerzburg.de/tp1/team/phd-studenten/msc-sarbajit-mazumdar/
+email: sarbajit.mazumdar@uni-wuerzburg.de
+phone: +49 931 31-84377
+office:
+  - Theoretische Physik I (TP1)
+  - M1 Computer Science/Physics, Room 03.015
+  - Am Hubland, 97074 Würzburg, Germany
+links:
+  scholar: https://scholar.google.com/citations?user=1YhOrqwAAAAJ
+  github: https://github.com/spinlessFermion1729
+  linkedin: https://www.linkedin.com/in/sarbajit-mazumdar-7a3b9b213
+  x: https://x.com/This_isSarbajit
+visitor_counter: https://github-visitor-counter-tau.vercel.app/api?username=spinlessFermion1729&theme=dark&columns=4&maxflags=12

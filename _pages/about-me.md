@@ -2,53 +2,12 @@
 layout: page
 title: Beyond Research
 permalink: /about-me/
-nav: true
+nav: false
 nav_order: 5
 description: Music, literature, cinema, chess, and astronomy.
 ---
 
-<style>
-.music-video-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
-  margin: 1.5rem 0 2rem;
-}
-
-.music-video-card {
-  min-width: 0;
-}
-
-.music-video-card h3 {
-  margin-bottom: 0.65rem;
-  font-size: 1rem;
-}
-
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  overflow: hidden;
-  border-radius: 0.4rem;
-  background: #000;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-@media (max-width: 768px) {
-  .music-video-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
-
-Outside research, Western classical music is an important part of my life. I particularly enjoy the works of [Wolfgang Amadeus Mozart](https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart) and [Johann Sebastian Bach](https://en.wikipedia.org/wiki/Johann_Sebastian_Bach). Among the compositions I often return to are Mozart's [*Requiem*](https://en.wikipedia.org/wiki/Requiem_%28Mozart%29) and [*Symphony No. 40*](https://en.wikipedia.org/wiki/Symphony_No._40_%28Mozart%29), as well as Bach's [*Cello Suites*](https://en.wikipedia.org/wiki/Cello_Suites_%28Bach%29), [*Air on the G String*](https://en.wikipedia.org/wiki/Air_on_the_G_String), and [*Toccata and Fugue in D minor*](https://en.wikipedia.org/wiki/Toccata_and_Fugue_in_D_minor,_BWV_565). Two pieces I particularly love are [Johann Pachelbel's *Canon in D*](https://en.wikipedia.org/wiki/Pachelbel%27s_Canon) and the dramatic storm movement from [Antonio Vivaldi's *The Four Seasons*](https://en.wikipedia.org/wiki/The_Four_Seasons_%28Vivaldi%29).
+Outside research, Western classical music is an important part of my life. I particularly enjoy the works of [Wolfgang Amadeus Mozart](https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart) and [Johann Sebastian Bach](https://en.wikipedia.org/wiki/Johann_Sebastian_Bach). Among the compositions I often return to are Mozart's [_Requiem_](https://en.wikipedia.org/wiki/Requiem_%28Mozart%29) and [_Symphony No. 40_](https://en.wikipedia.org/wiki/Symphony_No._40_%28Mozart%29), as well as Bach's [_Cello Suites_](https://en.wikipedia.org/wiki/Cello_Suites_%28Bach%29), [_Air on the G String_](https://en.wikipedia.org/wiki/Air_on_the_G_String), and [_Toccata and Fugue in D minor_](https://en.wikipedia.org/wiki/Toccata_and_Fugue_in_D_minor,_BWV_565). Two pieces I particularly love are [Johann Pachelbel's _Canon in D_](https://en.wikipedia.org/wiki/Pachelbel%27s_Canon) and the dramatic storm movement from [Antonio Vivaldi's _The Four Seasons_](https://en.wikipedia.org/wiki/The_Four_Seasons_%28Vivaldi%29).
 
 <div class="music-video-grid">
   <div class="music-video-card">
@@ -63,6 +22,7 @@ Outside research, Western classical music is an important part of my life. I par
         allowfullscreen>
       </iframe>
     </div>
+
   </div>
 
   <div class="music-video-card">
@@ -77,6 +37,7 @@ Outside research, Western classical music is an important part of my life. I par
         allowfullscreen>
       </iframe>
     </div>
+
   </div>
 </div>
 

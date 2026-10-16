@@ -1,0 +1,36 @@
+{% assign p = site.data.profile %}
+{% assign campus = site.data.image_credits | where: 'id', 'campus' | first %}
+<div class="sx-contact">
+  <figure class="sx-contact-photo">
+    <img src="{{ campus.file | relative_url }}" alt="{{ campus.alt }}" loading="lazy" decoding="async">
+    <figcaption>
+      {{ campus.caption }} Photo: {{ campus.author }}, <a href="{{ campus.source }}">Wikimedia Commons</a>,
+      <a href="{{ campus.license_url }}">{{ campus.license }}</a>.
+    </figcaption>
+  </figure>
+  <div class="sx-contact-body">
+    <h3>Office</h3>
+    <address>
+      {% for line in p.office -%}
+        {{- line -}}
+        <br>
+      {% endfor %}
+    </address>
+    <ul class="sx-contact-list">
+      <li>
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:{{ p.email }}">{{ p.email }}</a>
+      </li>
+      <li>
+        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        <a href="tel:{{ p.phone | remove: ' ' | remove: '-' }}">{{ p.phone }}</a>
+      </li>
+      <li>
+        <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+        <a href="{{ p.institutional_url }}">Institutional webpage</a>
+      </li>
+      <li><i class="ai ai-google-scholar" aria-hidden="true"></i> <a href="{{ p.links.scholar }}">Google Scholar</a></li>
+      <li><i class="fa-brands fa-github" aria-hidden="true"></i> <a href="{{ p.links.github }}">GitHub</a></li>
+      <li><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> <a href="{{ p.links.linkedin }}">LinkedIn</a></li>
+    </ul>
+  </div>
+</div>

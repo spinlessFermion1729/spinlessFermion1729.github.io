@@ -13,6 +13,9 @@
     | replace: 'arXiv preprint ', ''
   %}
   {% capture entrytype %}<em>{{ ed_journal }}</em>{% if entry.volume %} <b>{{ entry.volume }}</b>{% endif %}{% if entry.pages %}, {{ entry.pages }}{% endif %}{% if entry.year %} ({{ entry.year }}){% endif %}{% endcapture %}
+  {% if entry.journal contains 'arXiv' %}
+    {% capture entrytype %}{{ entrytype }} <span class="sx-pub-status">Preprint</span>{% endcapture %}
+  {% endif %}
   {% assign entrymonth = '' %}
   {% assign entryyear = '' %}
 {% endif %}

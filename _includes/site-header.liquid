@@ -1,0 +1,67 @@
+{% comment %}
+  Site navigation. Replaces al_folio_core's header.liquid (rendered from _layouts/default.liquid).
+  Keeps the gem's hooks: [data-nav-toggle] (nav-toggle.js), #light-toggle (theme.js), #progress.
+{% endcomment %}
+<header class="sx-header">
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top sx-nav" aria-label="Main">
+    <div class="container sx-nav-inner">
+      <a class="sx-brand" href="{{ '/' | relative_url }}">{{ site.data.profile.name }}</a>
+
+      <button
+        class="navbar-toggler collapsed navbar-toggler-main sx-toggler"
+        type="button"
+        data-nav-toggle="navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navbar-collapse-main sx-menu" id="navbarNav">
+        <ul class="navbar-nav sx-menu-list">
+          {% for item in site.data.navigation %}
+            {% if item.url == '/' %}
+              {% if page.url == '/' %}{% assign is_active = true %}{% else %}{% assign is_active = false %}{% endif %}
+            {% else %}
+              {% assign is_active = false %}
+              {% if page.url contains item.url %}{% assign is_active = true %}{% endif %}
+              {% for alias in item.also %}
+                {% if page.url contains alias %}{% assign is_active = true %}{% endif %}
+              {% endfor %}
+            {% endif %}
+            <li class="nav-item{% if is_active %} active{% endif %}">
+              <a
+                class="nav-link"
+                href="{{ item.url | relative_url }}"
+                {% if is_active %}
+                  aria-current="page"
+                {% endif %}
+              >
+                {{- item.title -}}
+              </a>
+            </li>
+          {% endfor %}
+          {% if site.enable_darkmode %}
+            <li class="toggle-container">
+              <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme">
+                <i class="fa-half-sun-moon" id="light-toggle-system" aria-hidden="true"></i>
+                <i class="fa-solid fa-moon" id="light-toggle-dark" aria-hidden="true"></i>
+                <i class="fa-solid fa-sun" id="light-toggle-light" aria-hidden="true"></i>
+              </button>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% if site.enable_progressbar %}
+    <progress id="progress" value="0">
+      <div class="progress-container">
+        <span class="progress-bar"></span>
+      </div>
+    </progress>
+  {% endif %}
+</header>

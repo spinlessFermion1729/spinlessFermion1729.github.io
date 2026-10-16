@@ -1,0 +1,28 @@
+{% assign p = site.data.profile %}
+<footer class="sx-footer" role="contentinfo">
+  <div class="container sx-footer-inner">
+    <div class="sx-footer-id">
+      <a class="sx-footer-name" href="{{ '/' | relative_url }}">{{ p.name }}</a>
+      <p>
+        {{ p.chair -}}
+        <br>
+        {{ p.university }}
+      </p>
+    </div>
+    <nav class="sx-footer-links" aria-label="Profiles and contact">
+      <a href="mailto:{{ p.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>
+      <a href="{{ p.links.scholar }}"><i class="ai ai-google-scholar" aria-hidden="true"></i> Google Scholar</a>
+      <a href="{{ p.links.github }}"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+      <a href="{{ p.links.linkedin }}"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a>
+      <a href="{{ p.links.x }}"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i> X</a>
+    </nav>
+    <div class="sx-footer-meta">
+      <span
+        >&copy; {{ site.time | date: '%Y' }}
+        {{ p.name -}}
+      </span>
+      <a href="{{ '/image-credits/' | relative_url }}">Image credits</a>
+      <a href="{{ '/about-me/' | relative_url }}">Beyond research</a>
+    </div>
+  </div>
+</footer>

@@ -4,15 +4,18 @@ title: About
 permalink: /about/
 nav: true
 nav_order: 2
-description: Academic background and current position of Sarbajit Mazumdar.
+description: Academic background, research interests, and contact information.
 ---
 
-## Current position
+{% assign p = site.data.profile %}
 
-**Ph.D. student**, Chair of Theoretical Physics I,
-[Julius-Maximilians-Universität Würzburg](https://www.uni-wuerzburg.de/en/), Germany<br>
-Condensed Matter Theory group of
-[Prof. Ronny Thomale](https://www.physik.uni-wuerzburg.de/tp1/team/professoren/prof-dr-ronny-thomale/)
+<div class="sx-about-intro">
+  <img class="sx-about-portrait" src="{{ p.portrait | relative_url }}" alt="Portrait of {{ p.name }}" width="395" height="395" loading="lazy">
+  <div>
+    <p class="sx-kicker">Current position</p>
+    <p class="sx-about-role"><strong>{{ p.role }}</strong><br>{{ p.chair }}, <a href="{{ p.university_url }}">{{ p.university }}</a>, Germany<br>Condensed Matter Theory group of <a href="{{ p.group_lead_url }}">{{ p.group_lead }}</a></p>
+  </div>
+</div>
 
 My doctoral work concerns strongly correlated electron systems, in particular
 superconducting pairing at strong coupling, altermagnetism, and the collective
@@ -35,6 +38,14 @@ CGPA 9.37/10
 
 ## Contact
 
-Email: [sarbajit.mazumdar@uni-wuerzburg.de](mailto:sarbajit.mazumdar@uni-wuerzburg.de)<br>
-Office: M1 Computer Science/Physics, Room 03.015, Am Hubland, 97074 Würzburg, Germany<br>
-[Institutional webpage](https://www.physik.uni-wuerzburg.de/tp1/team/phd-studenten/msc-sarbajit-mazumdar/)
+{% include contact-card.liquid %}
+
+## Beyond research
+
+Outside physics I care a great deal about music, literature, cinema, chess, and astronomy.
+A few words about these are on the [Beyond Research]({{ '/about-me/' | relative_url }}) page.
+
+<aside class="sx-visitors" aria-label="Visitor statistics">
+  <p>Visitors around the world</p>
+  <img src="{{ p.visitor_counter }}" alt="Country flags showing visitors to this website" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+</aside>

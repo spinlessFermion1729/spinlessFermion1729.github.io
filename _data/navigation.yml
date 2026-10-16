@@ -1,0 +1,11 @@
+# Top navigation (rendered by _includes/site-header.liquid).
+# `also` lists other URL prefixes that should highlight the item.
+- title: Home
+  url: /
+- title: Research
+  url: /research/
+- title: Publications
+  url: /publications/
+- title: About
+  url: /about/
+  also: [/about-me/, /image-credits/]

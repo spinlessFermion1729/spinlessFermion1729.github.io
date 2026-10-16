@@ -1,0 +1,26 @@
+{% comment %}
+  Figure with caption and attribution, from _data/image_credits.yml.
+  Usage: {% include research-figure.liquid id="dwave" %}
+{% endcomment %}
+{% assign fig = site.data.image_credits | where: 'id', include.id | first %}
+{% if fig %}
+  <figure class="sx-figure{% if fig.kind == 'schematic' %} is-schematic{% endif %}">
+    <div class="sx-figure-media">
+      <img src="{{ fig.file | relative_url }}" alt="{{ fig.alt | strip }}" loading="lazy" decoding="async">
+      {% if fig.kind == 'schematic' -%}
+        <span class="sx-chip">Schematic</span>
+      {%- endif %}
+    </div>
+    <figcaption>
+      {{ fig.caption | strip }}
+      <span class="sx-credit">
+        {% if fig.kind == 'schematic' %}
+          Model illustration, not research data · <a href="{{ '/image-credits/' | relative_url }}#{{ fig.id }}">details</a>
+        {% else %}
+          {{ fig.author }} · <a href="{{ fig.source }}">Wikimedia Commons</a> ·
+          <a href="{{ fig.license_url }}">{{ fig.license }}</a>
+        {% endif %}
+      </span>
+    </figcaption>
+  </figure>
+{% endif %}

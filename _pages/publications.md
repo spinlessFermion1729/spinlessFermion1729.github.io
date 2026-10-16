@@ -7,9 +7,15 @@ nav_order: 4
 description: Journal articles and preprints by Sarbajit Mazumdar.
 ---
 
-Journal articles and preprints in reverse chronological order. An up-to-date
-citation record is available on
-[Google Scholar](https://scholar.google.com/citations?user=1YhOrqwAAAAJ&hl=en).
+<p class="sx-page-lead">
+Journal articles and preprints in reverse chronological order. An up-to-date citation record is
+available on <a href="{{ site.data.profile.links.scholar }}">Google Scholar</a>.
+</p>
+
+<p class="sx-pub-legend" aria-hidden="true">
+  <span class="sx-legend-journal">Journal article</span>
+  <span class="sx-legend-preprint">Preprint</span>
+</p>
 
 <div class="publications">
 

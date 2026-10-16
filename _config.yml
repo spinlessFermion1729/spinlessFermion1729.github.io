@@ -12,7 +12,7 @@ description: >
   Sarbajit Mazumdar, Ph.D. researcher in theoretical condensed matter physics at the University of Würzburg:
   strongly correlated electrons, unconventional superconductivity, altermagnetism, and quantum transport.
 footer_text: >
-  Theoretical Physics I, Julius-Maximilians-Universität Würzburg.
+  Theoretische Physik I (TP1), Julius-Maximilians-Universität Würzburg.
 keywords: Sarbajit Mazumdar, condensed matter theory, strongly correlated electrons, unconventional superconductivity, altermagnetism, slave-boson, Hubbard model, quantum transport, University of Würzburg
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: favicon-sm-lattice.svg
@@ -90,7 +90,7 @@ posts_in_search: false
 bib_search: false
 
 # Dimensions
-max_width: 1040px
+max_width: 1120px
 
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
@@ -217,6 +217,7 @@ include: ["_pages"]
 exclude:
   - al-folio-upgrade-report.md
   - AGENTS.md
+  - IMAGE_CREDITS.md
   - CLAUDE.md
   - requirements.txt
   - test/
