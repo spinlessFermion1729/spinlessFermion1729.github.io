@@ -4,32 +4,37 @@ title: About
 permalink: /about/
 nav: true
 nav_order: 2
-description: Academic background and current position.
+description: Academic background and current position of Sarbajit Mazumdar.
 ---
 
 ## Current position
 
-I am a Ph.D. student in **Theoretical Physics I** at the
-**Julius-Maximilians-Universität Würzburg, Germany**, working in the
+**Ph.D. student**, Chair of Theoretical Physics I,
+[Julius-Maximilians-Universität Würzburg](https://www.uni-wuerzburg.de/en/), Germany<br>
 Condensed Matter Theory group of
-[Prof. Ronny Thomale](https://www.physik.uni-wuerzburg.de/tp1/team/professoren/prof-dr-ronny-thomale/).
+[Prof. Ronny Thomale](https://www.physik.uni-wuerzburg.de/tp1/team/professoren/prof-dr-ronny-thomale/)
 
-My current research is centred on strongly correlated quantum systems,
-unconventional superconductivity, altermagnetism, and quantum many-body theory.
+My doctoral work concerns strongly correlated electron systems, in particular
+superconducting pairing at strong coupling, altermagnetism, and the collective
+excitations of correlated magnets.
 
-## Academic background
+## Education
 
-I completed my **Integrated Master's degree in Physics** at the
-[National Institute of Science Education and Research (NISER), Bhubaneswar](https://www.niser.ac.in/),
-with a **CGPA of 9.37/10**.
+**Integrated Master of Science (B.Sc.–M.Sc.) in Physics**<br>
+[National Institute of Science Education and Research (NISER)](https://www.niser.ac.in/), Bhubaneswar, India<br>
+CGPA 9.37/10
 
-My academic training is in **theoretical condensed matter physics**. I am
-particularly interested in systems where strong correlations, symmetry,
-topology, and magnetism generate emergent quantum phenomena.
+## Methods and tools
 
-## Methods
+- **Many-body theory:** Kotliar–Ruckenstein slave-boson mean-field theory and
+  fluctuations, random-phase approximation, frequency-dependent gap equations
+- **Band structure and topology:** tight-binding modelling, symmetry analysis,
+  topological band theory, non-Hermitian systems
+- **Quantum transport:** scattering theory, wave-packet dynamics, Josephson junctions
+- **Computation:** Python, C++, Mathematica
 
-My research uses analytical and numerical techniques from quantum many-body
-theory, slave-boson methods, tight-binding models, topological band theory,
-and quantum transport. My computational work primarily uses **Python, C++,
-and Mathematica**.
+## Contact
+
+Email: [sarbajit.mazumdar@uni-wuerzburg.de](mailto:sarbajit.mazumdar@uni-wuerzburg.de)<br>
+Office: M1 Computer Science/Physics, Room 03.015, Am Hubland, 97074 Würzburg, Germany<br>
+[Institutional webpage](https://www.physik.uni-wuerzburg.de/tp1/team/phd-studenten/msc-sarbajit-mazumdar/)

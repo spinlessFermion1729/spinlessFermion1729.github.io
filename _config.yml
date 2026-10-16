@@ -7,12 +7,13 @@ first_name: Sarbajit
 middle_name:
 last_name: Mazumdar
 contact_note: >
-  To get in touch with me, drop an email.
+  The best way to reach me is by email.
 description: >
-  Academic website of Sarbajit Mazumdar, Ph.D. student in theoretical condensed matter physics.
+  Sarbajit Mazumdar, Ph.D. researcher in theoretical condensed matter physics at the University of Würzburg:
+  strongly correlated electrons, unconventional superconductivity, altermagnetism, and quantum transport.
 footer_text: >
-  Academic website of Sarbajit Mazumdar.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+  Theoretical Physics I, Julius-Maximilians-Universität Würzburg.
+keywords: Sarbajit Mazumdar, condensed matter theory, strongly correlated electrons, unconventional superconductivity, altermagnetism, slave-boson, Hubbard model, quantum transport, University of Würzburg
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: favicon-sm-lattice.svg
 
@@ -96,9 +97,9 @@ max_width: 930px
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
 # see https://schema.org/docs/faq.html for more information
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
-serve_schema_org: false # Include Schema.org in the HTML head
-og_image: # The site-wide (default for all links) Open Graph preview image
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
+serve_schema_org: true # Include Schema.org in the HTML head
+og_image: https://spinlessfermion1729.github.io/assets/img/prof_pic.jpg # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -121,7 +122,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Research Notes
-blog_description: a simple whitespace theme for academics
+blog_description: Notes on condensed matter theory
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 

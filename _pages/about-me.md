@@ -1,10 +1,10 @@
 ---
 layout: page
-title: About Me
+title: Beyond Research
 permalink: /about-me/
 nav: true
 nav_order: 5
-description: Interests beyond academic research.
+description: Music, literature, cinema, chess, and astronomy.
 ---
 
 <style>
@@ -48,9 +48,7 @@ description: Interests beyond academic research.
 }
 </style>
 
-## Beyond physics
-
-Outside research, Western classical music is an important part of my life. I particularly enjoy the works of [Wolfgang Amadeus Mozart](https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart) and [Johann Sebastian Bach](https://en.wikipedia.org/wiki/Johann_Sebastian_Bach). Among the compositions I often return to are Mozart's [*Requiem*](https://en.wikipedia.org/wiki/Requiem_%28Mozart%29) and [*Symphony No. 40*](https://en.wikipedia.org/wiki/Symphony_No._40_%28Mozart%29), as well as Bach's [*Cello Suites*](https://en.wikipedia.org/wiki/Cello_Suites_%28Bach%29), [*Air on the G String*](https://en.wikipedia.org/wiki/Air_on_the_G_String), and [*Toccata and Fugue in D minor*](https://en.wikipedia.org/wiki/Toccata_and_Fugue_in_D_minor,_BWV_565). Here are two scintillating musical pieces that I particularly enjoy: [Johann Pachelbel's *Canon in D*](https://en.wikipedia.org/wiki/Pachelbel%27s_Canon) and the dramatic storm movement from [Antonio Vivaldi's *The Four Seasons*](https://en.wikipedia.org/wiki/The_Four_Seasons_%28Vivaldi%29).
+Outside research, Western classical music is an important part of my life. I particularly enjoy the works of [Wolfgang Amadeus Mozart](https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart) and [Johann Sebastian Bach](https://en.wikipedia.org/wiki/Johann_Sebastian_Bach). Among the compositions I often return to are Mozart's [*Requiem*](https://en.wikipedia.org/wiki/Requiem_%28Mozart%29) and [*Symphony No. 40*](https://en.wikipedia.org/wiki/Symphony_No._40_%28Mozart%29), as well as Bach's [*Cello Suites*](https://en.wikipedia.org/wiki/Cello_Suites_%28Bach%29), [*Air on the G String*](https://en.wikipedia.org/wiki/Air_on_the_G_String), and [*Toccata and Fugue in D minor*](https://en.wikipedia.org/wiki/Toccata_and_Fugue_in_D_minor,_BWV_565). Two pieces I particularly love are [Johann Pachelbel's *Canon in D*](https://en.wikipedia.org/wiki/Pachelbel%27s_Canon) and the dramatic storm movement from [Antonio Vivaldi's *The Four Seasons*](https://en.wikipedia.org/wiki/The_Four_Seasons_%28Vivaldi%29).
 
 <div class="music-video-grid">
   <div class="music-video-card">

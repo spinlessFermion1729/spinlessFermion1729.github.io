@@ -4,10 +4,11 @@ title: Publications
 permalink: /publications/
 nav: true
 nav_order: 4
-description: Journal articles and preprints.
+description: Journal articles and preprints by Sarbajit Mazumdar.
 ---
 
-A complete citation record is also available on my
-[Google Scholar profile](https://scholar.google.com/citations?user=1YhOrqwAAAAJ&hl=en).
+Journal articles and preprints in reverse chronological order. An up-to-date
+citation record is available on
+[Google Scholar](https://scholar.google.com/citations?user=1YhOrqwAAAAJ&hl=en).
 
 {% bibliography %}

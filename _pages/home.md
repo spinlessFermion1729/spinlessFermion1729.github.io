@@ -53,7 +53,9 @@ selected_papers: false
 social: true
 
 announcements:
-  enabled: false
+  enabled: true
+  scrollable: false
+  limit: 5
 
 latest_posts:
   enabled: false
@@ -266,24 +268,23 @@ latest_posts:
   </div>
 </div>
 
-I am **Sarbajit Mazumdar**, a Ph.D. student in
-**Theoretical Physics I** at the
-[**Julius-Maximilians-Universität Würzburg**](https://www.uni-wuerzburg.de/en/),
-working in the Condensed Matter Theory group of
-[Prof. Ronny Thomale](https://www.physik.uni-wuerzburg.de/tp1/team/professoren/prof-dr-ronny-thomale/).
+I am a Ph.D. student in theoretical condensed matter physics in the group of
+[Prof. Ronny Thomale](https://www.physik.uni-wuerzburg.de/tp1/team/professoren/prof-dr-ronny-thomale/)
+at the Chair of Theoretical Physics I,
+[Julius-Maximilians-Universität Würzburg](https://www.uni-wuerzburg.de/en/).
 
-My research focuses on theoretical condensed matter physics, particularly
-**strongly correlated quantum systems**, **unconventional superconductivity**,
-**altermagnetism**, **different emergent phases of matter**, and
-**quantum transport**.
+My research asks how electronic correlations, lattice symmetry, and topology
+organize electrons into collective quantum phases. Current topics include
+**unconventional superconductivity at strong coupling**, **altermagnetic order
+and its collective spin excitations**, and **quantum transport** in flat-band
+and topological systems.
 
-I am interested in understanding how interactions, symmetry, topology,
-magnetism, and low dimensionality give rise to emergent quantum phenomena.
-In particular, I study how microscopic electronic processes organize into
-collective phases with unconventional magnetic, superconducting, and
-topological properties. My broader goal is to develop theoretical
-descriptions that connect fundamental many-body mechanisms with
-experimentally observable features in quantum materials.
+Methodologically, I combine slave-boson and fluctuation-based many-body
+approaches with tight-binding modelling and scattering theory. The aim is a
+controlled link between microscopic mechanisms and experimentally accessible
+signatures in quantum materials. More details are on the
+[research]({{ '/research/' | relative_url }}) and
+[publications]({{ '/publications/' | relative_url }}) pages.
 
 <div class="home-content-clear"></div>
 
@@ -337,13 +338,24 @@ experimentally observable features in quantum materials.
     title.appendChild(flagLink);
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener(
-      "DOMContentLoaded",
-      installIndianFlag
-    );
-  } else {
+  function moveVisitorFlags() {
+    const flags = document.querySelector(".visitor-flags");
+    const article = document.querySelector(".post article");
+
+    if (flags && article) {
+      article.appendChild(flags);
+    }
+  }
+
+  function init() {
     installIndianFlag();
+    moveVisitorFlags();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
   }
 })();
 </script>
