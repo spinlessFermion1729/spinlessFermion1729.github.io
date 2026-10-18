@@ -4,16 +4,16 @@ title: Research
 permalink: /research/
 nav: true
 nav_order: 3
-description: Strongly correlated superconductivity, altermagnetism, and quantum transport in quantum materials.
+description: Superconducting pairing, altermagnetic order, collective spin excitations, and quantum transport in correlated systems.
 math: true
 ---
 
 <p class="sx-page-lead">
-I study how interactions between electrons, together with lattice symmetry and
-topology, give rise to collective quantum phases that have no single-particle
-description. Much of my work uses slave-boson methods for the Hubbard model,
-which capture strong local correlations while remaining tractable enough to
-compute momentum- and frequency-resolved response functions.
+My research examines how electronic correlations, lattice symmetry, and band
+topology shape electronic order, collective excitations, and transport.
+A central part of this work uses slave-boson approaches to Hubbard models to
+treat strong local correlations and calculate momentum- and frequency-resolved
+response functions.
 </p>
 
 <nav class="sx-toc" aria-label="Research directions">
@@ -26,7 +26,7 @@ compute momentum- and frequency-resolved response functions.
 <section class="sx-rs sx-reveal" id="superconductivity" aria-labelledby="rs-sc-title">
 <p class="sx-kicker">01 · Research direction</p>
 <h2 id="rs-sc-title">Unconventional Superconductivity</h2>
-<p class="sx-rs-lead">How does superconducting pairing emerge when local electronic correlations are strong, in the regime where weak-coupling spin-fluctuation theory is no longer controlled?</p>
+<p class="sx-rs-lead">Superconducting pairing mediated by electronic fluctuations in the presence of strong local correlations.</p>
 
 <div class="sx-rs-grid">
 <div class="sx-rs-text" markdown="1">
@@ -38,14 +38,13 @@ compute momentum- and frequency-resolved response functions.
   <dd>Spin-rotation-invariant Kotliar–Ruckenstein slave bosons, fluctuation-derived pairing vertex, frequency-dependent gap equation; functional renormalization group (kagome study)</dd>
 </dl>
 
-Weak-coupling theories of spin-fluctuation-mediated pairing become unreliable
-precisely in the regime most relevant to correlated superconductors. We have
-developed a spin-rotation-invariant Kotliar–Ruckenstein slave-boson framework in
+To investigate pairing beyond weak-coupling approaches, we developed a
+spin-rotation-invariant Kotliar–Ruckenstein slave-boson framework in
 which an effective pairing vertex is obtained from fluctuations around the
 mean-field saddle point. Solving the resulting frequency-dependent gap equation
-for the square-lattice Hubbard model maps pairing instabilities as a function of
-doping, interaction strength, and temperature, and gives access to the gap
-structure on the real-frequency axis.
+for the square-lattice Hubbard model allows us to examine pairing instabilities
+as a function of doping, interaction strength, and temperature, and to resolve
+the gap structure on the real-frequency axis.
 
 <div class="sx-papers" markdown="1">
 
@@ -64,7 +63,7 @@ structure on the real-frequency axis.
 <section class="sx-rs sx-reveal" id="altermagnetism" aria-labelledby="rs-am-title">
 <p class="sx-kicker">02 · Research direction</p>
 <h2 id="rs-am-title">Altermagnetism and Collective Spin Excitations</h2>
-<p class="sx-rs-lead">How do lattice and sublattice structure select altermagnetic order, and how do its magnons evolve when correlations drive the system from a metal to a Mott insulator?</p>
+<p class="sx-rs-lead">Microscopic selection of altermagnetic order and the evolution of collective spin excitations across the metal–insulator transition.</p>
 
 <div class="sx-rs-grid">
 <div class="sx-rs-text" markdown="1">
@@ -76,15 +75,15 @@ structure on the real-frequency axis.
   <dd>Kotliar–Ruckenstein slave-boson theory, sublattice-resolved magnetic instabilities, dynamical spin susceptibilities, magnon dispersions and lifetimes</dd>
 </dl>
 
-Altermagnets combine compensated magnetic order with spin-split bands whose
-splitting follows the lattice symmetry. I am interested in how such order is
-selected microscopically and how its spin excitations behave when electronic
-correlations are strong. On the square-kagome lattice, sublattice-resolved
-magnetic instabilities can be used to select between $d_{xy}$- and
-$d_{x^2-y^2}$-type altermagnetic phases. On the checkerboard lattice, we follow
-the chiral magnon branches of an altermagnet across the metal–insulator
-transition, from strongly damped modes in the metal to coherent but deformed
-branches in the Mott insulator.
+Altermagnets combine compensated magnetic order with momentum-dependent spin
+splitting constrained by crystal symmetry. I investigate the microscopic
+selection of these phases and the influence of electronic correlations on
+their collective spin excitations. On the square-kagome lattice, we examine
+sublattice-resolved magnetic instabilities associated with $d_{xy}$- and
+$d_{x^2-y^2}$-type altermagnetic phases. On the checkerboard lattice, we track
+chiral magnon branches across the metal–insulator transition, from strongly
+damped modes in the metal to coherent branches with modified dispersion in
+the Mott insulator.
 
 <div class="sx-papers" markdown="1">
 
@@ -123,7 +122,7 @@ branches in the Mott insulator.
 <section class="sx-rs sx-reveal" id="transport" aria-labelledby="rs-tr-title">
 <p class="sx-kicker">03 · Research direction</p>
 <h2 id="rs-tr-title">Quantum Transport, Band Geometry, and Topology</h2>
-<p class="sx-rs-lead">How do flat bands, band geometry, and topology leave measurable signatures in transport and nonlinear response?</p>
+<p class="sx-rs-lead">Signatures of flat bands, band geometry, and topology in superconducting transport, nonlinear Hall response, and charge pumping.</p>
 
 <div class="sx-rs-grid">
 <div class="sx-rs-text" markdown="1">
@@ -135,16 +134,16 @@ branches in the Mott insulator.
   <dd>Scattering theory, wave-packet dynamics, Josephson-junction transport, Berry-curvature and symmetry analysis, non-Bloch topological invariants</dd>
 </dl>
 
-Flat bands and band geometry leave distinctive signatures in transport. In
-proximity-coupled junctions on the extended $\alpha$-$T_3$ lattice, quasi-flat
-bands strongly enhance Andreev reflection; combined with anisotropic dispersion
-they produce direction-dependent, Goos–Hänchen-like shifts and a Hall-like
-response in Josephson junctions. In metal–organic frameworks, spin–orbit
-coupling and broken inversion symmetry concentrate Berry curvature near gapped
-Dirac points, making these materials chemically tunable platforms for the
-nonlinear Hall effect. Earlier work addressed topological charge pumping in
-the non-Hermitian Rice–Mele model, where the skin effect and exceptional points
-produce anomalous pumping, including pumping with no Hermitian counterpart.
+I investigate how band structure and geometry influence transport in several
+complementary settings. In proximity-coupled junctions on the extended
+$\alpha$-$T_3$ lattice, we study enhanced Andreev reflection associated with
+quasi-flat bands, direction-dependent Goos–Hänchen-like shifts, and a Hall-like
+response in Josephson junctions. In metal–organic frameworks, we examine how
+spin–orbit coupling and broken inversion symmetry generate Berry curvature
+near gapped Dirac points and enable a nonlinear Hall response. Earlier work
+on the non-Hermitian Rice–Mele model investigated the roles of the skin effect
+and exceptional points in anomalous charge pumping, including regimes with
+no Hermitian counterpart.
 
 <div class="sx-papers" markdown="1">
 
@@ -163,7 +162,7 @@ produce anomalous pumping, including pumping with no Hermitian counterpart.
 <section class="sx-rs sx-rs-interactive" id="hubbard" aria-labelledby="rs-hub-title">
 <p class="sx-kicker">04 · Interactive</p>
 <h2 id="rs-hub-title">Interactive Physics: The Hubbard Model</h2>
-<p class="sx-rs-lead">The widget below is a qualitative illustration of the competition between kinetic energy and local repulsion in the Hubbard model. It is a teaching visualization, not a numerical solution.</p>
+<p class="sx-rs-lead">An interactive illustration of the competition between kinetic energy and local repulsion in the Hubbard model. The visualization is qualitative and does not represent a numerical solution.</p>
 
 <!-- HUBBARD_SHOWCASE_START -->
 

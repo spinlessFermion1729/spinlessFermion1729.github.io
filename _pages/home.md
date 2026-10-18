@@ -15,20 +15,20 @@ hero:
 areas:
   - title: Unconventional Superconductivity
     text: >-
-      Investigating superconducting pairing in strongly correlated electronic systems using slave-boson theory,
-      many-body fluctuations, and frequency-dependent gap equations.
+      Superconducting pairing in correlated-electron models, studied through slave-boson theory
+      and fluctuation-mediated interactions.
     figure: dwave
     link: /research/#superconductivity
   - title: Altermagnetism & Spin Dynamics
     text: >-
-      Exploring how crystalline symmetry and electronic interactions stabilize altermagnetic order, shape
-      spin-split electronic bands, and govern collective magnetic excitations.
+      Microscopic mechanisms of altermagnetic order and the effects of lattice symmetry and electronic
+      correlations on spin-split bands and collective spin excitations.
     figure: altermagnet
     link: /research/#altermagnetism
   - title: Quantum Transport & Topology
     text: >-
-      Studying quantum transport, topological band structures, band geometry, and emergent responses in
-      low-dimensional quantum systems.
+      Quantum transport and nonlinear response in low-dimensional systems, with an emphasis on band geometry,
+      topology, and superconducting proximity effects.
     figure: chern-ribbon
     link: /research/#transport
 ---

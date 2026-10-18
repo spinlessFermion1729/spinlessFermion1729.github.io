@@ -8,7 +8,7 @@ description: Journal articles and preprints by Sarbajit Mazumdar.
 ---
 
 <p class="sx-page-lead">
-Journal articles and preprints in reverse chronological order. An up-to-date citation record is
+Journal articles and preprints, grouped by year. Citation information is
 available on <a href="{{ site.data.profile.links.scholar }}">Google Scholar</a>.
 </p>
 

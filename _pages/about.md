@@ -17,9 +17,8 @@ description: Academic background, research interests, and contact information.
   </div>
 </div>
 
-My doctoral work concerns strongly correlated electron systems, in particular
-superconducting pairing at strong coupling, altermagnetism, and the collective
-excitations of correlated magnets.
+My doctoral research focuses on superconducting pairing, altermagnetic order,
+and collective spin excitations in strongly correlated electron systems.
 
 ## Education
 
@@ -33,8 +32,8 @@ CGPA 9.37/10
   fluctuation corrections, random-phase approximation, fluctuation-exchange approximation (FLEX)
 - **Electronic structure and topology:** tight-binding Hamiltonians, symmetry analysis,
   topological characterization, non-Hermitian band theory
-- **Quantum transport:** scattering theory, wave-packet dynamics, Josephson junctions
-- **Computation:** Python, C++, Mathematica
+- **Quantum transport:** scattering theory, wave-packet dynamics, transport in Josephson junctions
+- **Scientific computing:** Python, C++, Mathematica
 
 ## Contact
 
@@ -42,8 +41,8 @@ CGPA 9.37/10
 
 ## Beyond research
 
-Outside physics I care a great deal about music, literature, cinema, chess, and astronomy.
-A few words about these are on the [Beyond Research]({{ '/about-me/' | relative_url }}) page.
+My interests outside physics include music, literature, cinema, chess, and astronomy.
+Read more on the [Beyond Research]({{ '/about-me/' | relative_url }}) page.
 
 <aside class="sx-visitors" aria-label="Visitor statistics">
   <p>Visitors around the world</p>
