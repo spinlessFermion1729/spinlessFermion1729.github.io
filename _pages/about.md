@@ -29,10 +29,10 @@ CGPA 9.37/10
 
 ## Methods and tools
 
-- **Many-body theory:** Kotliar–Ruckenstein slave-boson mean-field theory and
-  fluctuations, random-phase approximation, frequency-dependent gap equations
-- **Band structure and topology:** tight-binding modelling, symmetry analysis,
-  topological band theory, non-Hermitian systems
+- **Correlated-electron theory:** Kotliar–Ruckenstein slave-boson theory and
+  fluctuation corrections, random-phase approximation, fluctuation-exchange approximation (FLEX)
+- **Electronic structure and topology:** tight-binding Hamiltonians, symmetry analysis,
+  topological characterization, non-Hermitian band theory
 - **Quantum transport:** scattering theory, wave-packet dynamics, Josephson junctions
 - **Computation:** Python, C++, Mathematica
 
