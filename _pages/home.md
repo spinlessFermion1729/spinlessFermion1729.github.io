@@ -10,8 +10,7 @@ description: >
 hero:
   eyebrow: Theoretical Condensed Matter Physics
   lead: >-
-    I explore how electronic correlations, lattice symmetry, and topology give rise to unconventional
-    superconductivity, altermagnetism, and quantum transport in quantum materials.
+    I explore how electronic correlations, lattice symmetry, and topology give rise to exotic phases of matter.
 
 areas:
   - title: Unconventional Superconductivity
