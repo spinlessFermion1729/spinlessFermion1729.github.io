@@ -174,7 +174,7 @@ mjx-container {
   margin: 0 0 0.45rem;
   color: var(--sx-accent-2);
   font-family: var(--sx-sans);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -206,7 +206,7 @@ mjx-container {
   padding: 0.18rem 0.55rem;
   color: #e2e8f0;
   font-family: var(--sx-sans);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -450,7 +450,7 @@ html[data-theme="dark"] .sx-btn-primary {
   color: var(--sx-ink);
   font-family: var(--sx-display);
   font-size: clamp(2.1rem, 4.6vw, 3rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.03em;
 }
 
@@ -512,7 +512,7 @@ html[data-theme="dark"] .sx-btn-primary {
 .sx-section-title {
   margin: 0;
   font-size: clamp(1.6rem, 3vw, 2.1rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.03em;
 }
 
@@ -537,7 +537,7 @@ html[data-theme="dark"] .sx-btn-primary {
 .sx-fineprint {
   margin: 1.1rem 0 0;
   color: var(--sx-faint);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
 }
 
 .sx-fineprint a {
@@ -917,7 +917,7 @@ html[data-theme="dark"] .sx-btn-primary {
   color: var(--sx-ink);
   font-family: var(--sx-display);
   font-size: 1.3rem;
-  font-weight: 800;
+  font-weight: 700;
   text-align: left;
   border-bottom: 1px solid var(--sx-border);
 }
@@ -966,7 +966,7 @@ html[data-theme="dark"] .sx-btn-primary {
   padding: 0.2rem 0.4rem;
   color: var(--sx-accent) !important;
   font-family: var(--sx-sans);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   border: 1px solid color-mix(in srgb, var(--sx-accent) 35%, transparent);
@@ -1030,7 +1030,7 @@ html[data-theme="dark"] .sx-btn-primary {
   margin-left: 0.4rem;
   padding: 0.05rem 0.45rem;
   color: var(--sx-accent-2);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -1055,7 +1055,7 @@ html[data-theme="dark"] .sx-btn-primary {
   padding: 0.2rem 0.7rem;
   color: var(--sx-muted) !important;
   font-family: var(--sx-sans);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   line-height: 1;
@@ -1162,7 +1162,7 @@ html[data-theme="dark"] .sx-btn-primary {
 .post article .sx-rs h2 {
   margin: 0 0 0.75rem;
   font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.03em;
 }
 
@@ -1195,7 +1195,7 @@ html[data-theme="dark"] .sx-btn-primary {
 
 .sx-rs-meta dt {
   color: var(--sx-accent-2);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 1.9;
@@ -1291,15 +1291,15 @@ html[data-theme="dark"] .sx-btn-primary {
 .sx-figure figcaption {
   margin-top: 0.65rem;
   color: var(--sx-muted);
-  font-size: 0.8rem;
-  line-height: 1.55;
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 .sx-credit {
   display: block;
   margin-top: 0.3rem;
   color: var(--sx-faint);
-  font-size: 0.74rem;
+  font-size: 0.8125rem;
 }
 
 .sx-credit a {
@@ -1369,8 +1369,8 @@ html[data-theme="dark"] .sx-btn-primary {
 .sx-contact-photo figcaption {
   margin-top: 0.5rem;
   color: var(--sx-faint);
-  font-size: 0.72rem;
-  line-height: 1.45;
+  font-size: 0.8125rem;
+  line-height: 1.55;
 }
 
 .sx-contact-photo figcaption a {
@@ -1386,7 +1386,7 @@ html[data-theme="dark"] .sx-btn-primary {
   margin: 0 0 0.35rem;
   color: var(--sx-faint);
   font-family: var(--sx-sans);
-  font-size: 0.72rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1429,7 +1429,7 @@ html[data-theme="dark"] .sx-btn-primary {
 .sx-visitors p {
   margin-bottom: 0.75rem !important;
   color: var(--sx-faint) !important;
-  font-size: 0.72rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1672,7 +1672,7 @@ html[data-theme="dark"] .sx-fermi-canvas {
   margin: 0;
   color: var(--sx-faint) !important;
   font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  font-size: 0.7rem;
+  font-size: 0.8125rem;
   letter-spacing: 0.01em;
   font-variant-numeric: tabular-nums;
   pointer-events: none;
@@ -1772,7 +1772,7 @@ div.sx-magnon-inset span {
   align-items: center;
   justify-content: flex-end;
   color: var(--sx-muted);
-  font-size: 0.7rem;
+  font-size: 0.8125rem;
 }
 
 div.sx-magnon-inset i {
@@ -1795,8 +1795,8 @@ div.sx-magnon-inset i.is-b {
   max-width: 860px;
   margin-top: 0.7rem;
   color: var(--sx-muted);
-  font-size: 0.8rem;
-  line-height: 1.55;
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 /* Theme toggle domain wall (assets/js/physics-theme.js) */
